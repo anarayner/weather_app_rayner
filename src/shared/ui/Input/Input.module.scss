@@ -1,0 +1,28 @@
+.Input {
+    background: var(--bg-color);
+}
+.input {
+    padding: 8px 12px;
+    border-radius: 20px;
+    border: none;
+    width: 100%;
+    background: var(--bg-color-inverted);
+    color: white;
+}
+
+
+.placeholder {
+    display: flex;
+    align-items: center;
+    width: 120px;
+}
+
+.with_placeholder {
+    display: flex;
+}
+
+@media (max-width: 389px) {
+    .placeholder {
+        width: 160px;
+    }
+}

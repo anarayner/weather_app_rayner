@@ -1,0 +1,25 @@
+.Navbar {
+  width: 100%;
+  height: var(--navbar-height);
+  background: var(--bg-color);
+  padding: 10px 30px;
+  display: flex;
+  align-items: center;
+}
+
+.location {
+  width: 200px;
+  display: flex;
+  align-items: baseline;
+}
+
+.city {
+  font-size: 18px;
+  margin-left: 5px;
+}
+
+.input {
+  background: var(--bg-color-inverted);
+  margin-left: 30px;
+  width: 600px;
+}

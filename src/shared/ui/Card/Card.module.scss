@@ -1,0 +1,28 @@
+.Card {
+    border-radius: 12px;
+    background: var(--card-bg);
+}
+
+.normal {
+    //background: var(--bg-color-inverted);
+}
+
+.outlined {
+    border: 1px solid var(--primary-color);
+}
+
+.padding_0 {
+    padding: 0;
+}
+
+.padding_10 {
+    padding: 10px;
+}
+
+.padding_20 {
+    padding: 20px;
+}
+
+.max {
+    width: 100%;
+}

@@ -1,0 +1,28 @@
+.Progress {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+progress {
+  -webkit-appearance: none;
+}
+
+progress[value] {
+  height: 22px;
+  width: 180px;
+  border-radius: 20px;
+}
+
+::-webkit-progress-bar {
+  background-color: var(--bg-color-secondary);
+  border-radius: 20px;
+
+}
+
+::-webkit-progress-value {
+  background-color: var(--secondary-color);
+  border-radius: 20px;
+
+}

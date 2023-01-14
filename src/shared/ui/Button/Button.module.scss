@@ -23,7 +23,7 @@
 .outline {
     border: 1px solid var(--primary-color);
     background: none;
-    border-radius: 5px;
+    border-radius: 15px;
     color: var(--primary-color);
 }
 
@@ -70,6 +70,10 @@
 .square.size_xl {
     width: var(--font-line-xl);
     height: var(--font-line-xl);
+}
+
+.size_s {
+    font: var(--font-s);
 }
 
 .size_m {

@@ -6,15 +6,26 @@ import {Button} from "../../../../shared/ui/Button";
 import {ButtonSize} from "../../../../shared/ui/Button/Button";
 import {CurrentDayCard} from "../../../../features/CurrentDayCard/CurrentDayCard";
 import {WeekDayCard} from "../../../../features/WeekDayCard/WeekDayCard";
+import {City, List} from "../../../../store/types/types";
 
 
 interface TopLeftProps {
     className?: string;
-    data?: any
+    city?: City;
+    today?: List;
+    week?: List[];
+    hourly?: List[]
 }
 
-export const TopLeft = memo(({className}: TopLeftProps) => {
-    const days = [0, 1, 2, 3, 4, 5, 6]
+export const TopLeft = memo((props: TopLeftProps) => {
+    const {
+        className,
+        today,
+        city,
+        week,
+        hourly
+    } = props
+    const hours = [0, 1, 2]
 
     return (
         <div className={classNames('', {}, [className])}>
@@ -23,9 +34,12 @@ export const TopLeft = memo(({className}: TopLeftProps) => {
                 <Button size={ButtonSize.S} className={cls.btn}>C °</Button>
             </div>
             <div className={cls.weather_container}>
-                <CurrentDayCard/>
-                {days.map((day) =>
-                    <WeekDayCard key={day}/>
+                <CurrentDayCard today={today} city={city}/>
+                {hourly.map((day) =>
+                    <WeekDayCard key={day?.dt} time={day?.dt_txt} degree={day?.main?.temp}/>
+                )}
+                {week.map((day) =>
+                    <WeekDayCard key={day?.dt} date={day?.dt_txt} degree={day?.main?.temp}/>
                 )}
             </div>
         </div>

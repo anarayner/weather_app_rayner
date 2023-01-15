@@ -61,7 +61,7 @@ export interface City {
     timezone: number
 }
 
-interface Main {
+export interface Main {
     feels_like: number,
     grnd_level: number,
     humidity: number,
@@ -90,6 +90,9 @@ export interface List {
         speed: number,
         deg: number,
         gust: number
+    },
+    rain?: {
+        '3h'?: number
     }
 }
 export interface AllWeather {
@@ -98,3 +101,15 @@ export interface AllWeather {
     cod: string;
     list: List[];
 }
+
+export interface Rain {
+    date: string,
+    rainChance: number
+}
+
+export interface SearchHistory {
+    city: string;
+    temp: number;
+    weather: string
+}
+

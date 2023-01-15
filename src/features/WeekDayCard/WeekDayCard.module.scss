@@ -17,7 +17,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  padding: 15px;
   font-size: 20px;
   font-weight: 300;
   height: 64px;
@@ -45,4 +45,8 @@
     font-weight: 500;
     color: var(--primary-color);
   }
+}
+
+.time {
+  font-size: 16px;
 }

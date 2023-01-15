@@ -1,0 +1,50 @@
+.wrap{
+  padding-left: 30px;
+  width: 100%;
+  height: 100%;
+
+  div {
+    flex: 1;
+  }
+}
+
+.wrapper{
+  padding-left: 30px;
+}
+
+.top {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.bottom {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
+}
+
+.div1 {
+  //background: #041c65;
+  height: var(--top-container-height);
+  flex: 1;
+  overflow-x: auto;
+}
+
+.div2 {
+  //background: #b5b4ff;
+  width: 350px;
+}
+
+.div3 {
+  //background: coral;
+  flex: 1;
+}
+
+.div4 {
+  //background: aquamarine;
+  width: 350px;
+}
+
+

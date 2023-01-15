@@ -9,6 +9,7 @@ import {useStore} from "../../store/store";
 
 interface WeekDayDescCardProps {
     className?: string;
+    dayData?: any
 }
 
 export const WeekDayDescCard = memo(({className}: WeekDayDescCardProps) => {

@@ -5,20 +5,31 @@ import {Card, Padding} from "../../shared/ui/Card/Card";
 import WeatherIcon from '../../shared/assets/icons/coudy.svg'
 import {observer} from "mobx-react-lite";
 import {Loader} from "../../shared/ui/Loader/Loader";
-import {CurrentWeather} from "../../store/types/types";
+import {CurrentWeather, Main} from "../../store/types/types";
 import {Button} from "../../shared/ui/Button";
 import {ButtonTheme} from "../../shared/ui/Button/Button";
 import {WeekDayDescCard} from "../WeekDayDescCard/WeekDayDescCard";
 import {Modal} from "../../shared/ui/Modal/Modal";
 import {useState} from "react";
+import {formatAMPM, formatDay, formatTime, tempt} from "../../shared/libs/convertData/convertData";
 
 
 interface WeekDayCardProps {
     className?: string;
-    data?: CurrentWeather
+    date?: number | string;
+    degree?: number;
+    dayData?: Main;
+    time?: string;
 }
 
-export const WeekDayCard = observer(({className, data}: WeekDayCardProps) => {
+export const WeekDayCard = observer((props: WeekDayCardProps) => {
+    const {
+        className,
+        degree,
+        dayData,
+        date,
+        time
+    } = props
     const { dataStore } = useStore();
     const [isOpened, setIsOpened] = useState(false)
 
@@ -32,18 +43,19 @@ export const WeekDayCard = observer(({className, data}: WeekDayCardProps) => {
             <div className={classNames(cls.CurrentDay, {}, [className])}>
                 <Button theme={ButtonTheme.CLEAR} onClick={()=> setIsOpened(true)}>
                     <div className={cls.top}>
-                        <div className={cls.time}>Tue</div>
+                        {date && <div className={cls.date}>{formatDay(new Date(date))}</div>}
+                        {time && <div className={cls.time}>{formatAMPM(new Date(time))}</div>}
                     </div>
                     <div className={cls.middle}>
                         <div className={cls.icon}>{<WeatherIcon/>}</div>
                     </div>
                     <div className={cls.bottom}>
-                        <span>72°</span>
+                        <span>{Math.floor(tempt(degree, 'F'))}°</span>
                     </div>
                 </Button>
             </div>
             <Modal isOpen={isOpened} onClose={()=> setIsOpened(false)}>
-                <WeekDayDescCard/>
+                <WeekDayDescCard dayData={dayData}/>
             </Modal>
         </>
     );

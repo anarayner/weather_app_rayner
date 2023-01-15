@@ -1,7 +1,12 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<!-- Uploaded to: SVG Repo, www.svgrepo.com, Transformed by: SVG Repo Mixer Tools -->
-<svg width="64px" height="64px" viewBox="-0.5 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g id="SVGRepo_bgCarrier" stroke-width="0"/>
-<g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
-<g id="SVGRepo_iconCarrier"> <path d="M17.93 15.745H6.87C4.45 15.745 2.5 13.725 2.5 11.215C2.5 8.72503 4.45 6.68503 6.87 6.68503C7.4 6.68503 7.89999 6.77503 8.35999 6.95503C8.60999 7.04503 8.87001 6.95503 9.01001 6.73503C9.74001 5.49503 11.07 4.65503 12.59 4.65503C14.61 4.65503 16.28 6.11503 16.69 8.06503C16.75 8.33503 16.97 8.47504 17.24 8.41504C17.46 8.36504 17.69 8.34503 17.93 8.34503C19.91 8.34503 21.5 10.005 21.5 12.055C21.51 14.095 19.91 15.745 17.93 15.745Z" stroke="#ffffff" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/> <path d="M10.51 20.345L12.01 17.745" stroke="#ffffff" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/> <path d="M14.51 20.345L16.01 17.745" stroke="#ffffff" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/> <path d="M6.51001 20.345L8.01001 17.745" stroke="#ffffff" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/> </g>
-</svg>
+
+<!-- Uploaded to: SVG Repo, www.svgrepo.com, Transformed by: SVG Repo Mixer Tools -->
+<svg width="45px" height="45px" viewBox="-0.5 0 25 25" fill="auto" xmlns="http://www.w3.org/2000/svg">
+
+<g id="SVGRepo_bgCarrier" stroke-width="0"/>
+
+<g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+
+<g id="SVGRepo_iconCarrier"> <path d="M17.93 15.745H6.87C4.45 15.745 2.5 13.725 2.5 11.215C2.5 8.72503 4.45 6.68503 6.87 6.68503C7.4 6.68503 7.89999 6.77503 8.35999 6.95503C8.60999 7.04503 8.87001 6.95503 9.01001 6.73503C9.74001 5.49503 11.07 4.65503 12.59 4.65503C14.61 4.65503 16.28 6.11503 16.69 8.06503C16.75 8.33503 16.97 8.47504 17.24 8.41504C17.46 8.36504 17.69 8.34503 17.93 8.34503C19.91 8.34503 21.5 10.005 21.5 12.055C21.51 14.095 19.91 15.745 17.93 15.745Z" stroke="auto" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/> <path d="M10.51 20.345L12.01 17.745" stroke="auto" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/> <path d="M14.51 20.345L16.01 17.745" stroke="auto" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/> <path d="M6.51001 20.345L8.01001 17.745" stroke="auto" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/> </g>
+
+</svg>

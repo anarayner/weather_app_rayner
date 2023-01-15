@@ -6,24 +6,23 @@ import WeatherIcon from '../../shared/assets/icons/coudy.svg'
 import {observer} from "mobx-react-lite";
 import {Loader} from "../../shared/ui/Loader/Loader";
 import {formatAMPM, tempt} from "../../shared/libs/convertData/convertData";
+import {City, List} from "../../store/types/types";
 
 
 interface CurrentDayProps {
     className?: string;
+    city?: City;
+    today?: List;
 }
 
-export const CurrentDayCard = observer(({className}: CurrentDayProps) => {
-    const { dataStore } = useStore();
+export const CurrentDayCard = observer((props: CurrentDayProps) => {
+    const {
+        className,
+        today,
+        city
+    } = props
 
-    const city = dataStore.city
-    const today = dataStore.today
-    console.log(today?.main?.temp)
-
-    // console.log(dataStore.currentWeather?.base)
-
-    if(!dataStore.today){
-        return (<Loader/>)
-    } else return (
+    return (
         <div className={classNames(cls.CurrentDay, {}, [className])}>
             <Card padding={Padding.NONE}>
                 <div className={cls.top}>
@@ -31,7 +30,7 @@ export const CurrentDayCard = observer(({className}: CurrentDayProps) => {
                     <div className={cls.time}>{today?.weather?.[0]?.main}</div>
                 </div>
                 <div className={cls.middle}>
-                    <span className={cls.degree}>{today?.main?.temp ? Math.floor(tempt(today?.main?.temp, 'F')): null}°F</span>
+                    <span className={cls.degree}>{Math.floor(tempt(today?.main?.temp, 'F'))}°F</span>
                     <div className={cls.icon}>{<WeatherIcon/>}</div>
                 </div>
                 <div className={cls.bottom}>

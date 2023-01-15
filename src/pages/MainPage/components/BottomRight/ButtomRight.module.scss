@@ -1,7 +1,15 @@
+.BottomRight{
+  padding-top: 20px;
+}
+
+.container {
+  height: calc(100vh - var(--navbar-height) - var(--top-container-height) - 20px);
+}
 .cards_cont {
   overflow-y: auto;
-  max-height: 360px;
+  height: 380px;
   padding-right: 15px;
+  //padding-top: 20px;
 }
 
 .btn {

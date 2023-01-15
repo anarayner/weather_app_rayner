@@ -1,11 +1,19 @@
+.BottomLeft{
+  //position: absolute;
+  //left:0;
+  //right:0;
+  //top:0;
+  //bottom:0;
+}
 .card_grid{
-  height: 100%;
+  height: calc(100vh - var(--navbar-height) - var(--top-container-height) - 40px);
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
   grid-column-gap: 20px;
   grid-row-gap: 10px;
   position: relative;
+  padding: 20px 20px 0 0;
 
   .div1 { grid-area: 1 / 1 / 2 / 2; height: 100%}
   .div2 { grid-area: 1 / 2 / 2 / 3; }

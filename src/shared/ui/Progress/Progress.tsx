@@ -19,9 +19,9 @@ export const Progress = memo((props: ProgressProps) => {
 
     return (
         <div className={classNames(cls.Progress, {}, [className])}>
-            <div>{day}</div>
-            <progress value={value} className={cls.progress} />
-            <div>{value*100}%</div>
+            <p>{day}</p>
+            <progress value={value/100} className={cls.progress} />
+            <span>{value}%</span>
         </div>
     );
 });

@@ -5,22 +5,24 @@
   align-items: center;
   font-size: 14px;
 
-  p {
-    width: 55px;
+  .pros {
+    margin-right: 15px;
   }
 
   span {
     color: var(--primary-color);
-    margin-left: 20px;
+    width: 70px;
   }
 }
 
 progress {
   -webkit-appearance: none;
+  padding-right: 10px;
+
 }
 
 progress[value] {
-  height: 20px;
+  height: 18px;
   width: 180px;
   border-radius: 0 20px 20px 0;
 }

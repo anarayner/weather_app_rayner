@@ -1,5 +1,3 @@
-import {AllWeather, List, Rain, SearchHistory} from "../../../store/types/types";
-
 export const tempt = (temp: number, degree: string) => {
     const x = temp - 273.15
     const y = 9/5
@@ -18,48 +16,6 @@ export const formatAMPM = (date: Date) => {
     return strTime;
 }
 
-export const getWeekWeather = (data: List[]): List[] => {
-    const week:List[] =[]
-    data.map((d: List, index: number) => {
-        if(week.length == 4) return
-        if(index%8 == 0 && index !==0){
-            week.push(d)
-        }
-    })
-    return week
-}
-
-
-export const getRainChance = (data: List[]): Rain[] => {
-    const rainChance: Rain[] =[]
-    data.map((d: List, index: number) => {
-        if(rainChance.length == 7) return
-        const obj: Rain = {} as Rain
-        if(d?.rain?.["3h"]){
-            obj.date = d.dt_txt
-            obj.rainChance = d.rain["3h"]
-            rainChance.push(obj)
-        }
-    })
-    return rainChance
-}
-
-export const getSearchCity = (data: AllWeather): SearchHistory => {
-    const newCity: SearchHistory = <SearchHistory>{}
-    newCity.city = data.city.name
-    newCity.temp = data.list[0].main.temp
-    newCity.weather = data.list[0].weather[0].main
-    return newCity
-}
-
-export const getHourlyTodayWeather = (data: List[]): List[] => {
-    const week:List[] =[]
-    data.map((d: List) => {
-        if(week.length == 3) return
-        week.push(d)
-    })
-    return week
-}
 
 export const formatDayWithYear = (currentTime: Date) => {
     const day =

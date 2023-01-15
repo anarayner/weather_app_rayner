@@ -3,12 +3,7 @@ import {AllWeather, City, List, Rain, SearchHistory} from "./types/types";
 import axios from "axios";
 import {API_KEY} from "../shared/consts/consts";
 import {fetchAllWeather} from "../services/currentWeather";
-import {
-    getHourlyTodayWeather,
-    getRainChance,
-    getSearchCity,
-    getWeekWeather
-} from "../shared/libs/convertData/convertData";
+import {getHourlyTodayWeather, getRainChance, getSearchCity, getWeekWeather} from "../shared/libs/helpers/getData";
 
 
 class DataStore {
@@ -19,7 +14,7 @@ class DataStore {
     _weekDays: List[] = <List[]>{}
     _hourly: List[] = <List[]>[]
     _rainChance: Rain[] = <Rain[]>{}
-    _searchHistory: SearchHistory[] = <SearchHistory[]>[]
+
     constructor() {
         makeAutoObservable(this)
     }
@@ -81,13 +76,6 @@ class DataStore {
         return this._rainChance
     }
 
-    setSearchHistory(searchHistory: SearchHistory){
-        this._searchHistory.unshift(searchHistory)
-    }
-
-    get searchHistory(){
-        return this._searchHistory
-    }
 
     async fetchCurrentWeather(location: string){
         try{
@@ -109,12 +97,9 @@ class DataStore {
             // const week = [] as any
 
 
-            const searchCity = getSearchCity(data)
-
             console.log('WEEK',week)
             console.log('HOURLY',hourly)
             console.log('RAIN',rain)
-            console.log('SEARCH_CITY',searchCity)
 
 
             this.setToday(data.list[0])
@@ -122,7 +107,6 @@ class DataStore {
             this.setWeekDays(week)
             this.setHourly(hourly)
             this.setRainChance(rain)
-            this.setSearchHistory(searchCity)
 
         }catch (e) {
             console.log(e)

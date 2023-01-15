@@ -20,20 +20,15 @@ export const BottomRight = observer(({className, searchHistory}: BottomRightProp
         <div className={classNames(cls.BottomRight, {}, [className])}>
             <div className={cls.container}>
                 <div className={cls.button_container}>
-                    <Button size={ButtonSize.S}>Other cities</Button>
-                    <Button size={ButtonSize.S} className={cls.btn}>Search History</Button>
+                    <Button size={ButtonSize.S}>Search History</Button>
+                    <Button size={ButtonSize.S} className={cls.btn}>Other cities</Button>
                 </div>
                 {/*<div className={cls.cards_cont}>*/}
-                {/*    <OtherCitiesCard/>*/}
-                {/*    <OtherCitiesCard/>*/}
-                {/*    <OtherCitiesCard/>*/}
-                {/*    <OtherCitiesCard/>*/}
-                {/*    <OtherCitiesCard/>*/}
                 {/*    <OtherCitiesCard/>*/}
                 {/*</div>*/}
                 <div className={cls.cards_cont}>
                     {searchHistory.map((city) =>
-                        <OtherCitiesCard key={city.city} name={city.city} temp={city.temp} weather={city.weather}/>
+                        <OtherCitiesCard key={city?.city} name={city?.city} temp={city?.temp} weather={city?.weather}/>
                     )}
                 </div>
             </div>

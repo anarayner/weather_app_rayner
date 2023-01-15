@@ -1,3 +1,5 @@
+const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+
 export const tempt = (temp: number, degree: string) => {
     const x = temp - 273.15
     const y = 9/5
@@ -23,6 +25,10 @@ export const formatDayWithYear = (currentTime: Date) => {
         currentTime.toLocaleString('default', { month: 'short' }) + '  ' +
         currentTime.getFullYear()
     return day
+}
+
+export const formatDayOfWeek = (currentTime: Date) => {
+    return days[ currentTime.getDay() ];
 }
 
 export const formatDay = (currentTime: Date) => {

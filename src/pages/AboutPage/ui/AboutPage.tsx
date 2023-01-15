@@ -12,17 +12,7 @@ const AboutPage = () => {
 
     return (
         <div className={cls.wrap} id="fullheight">
-            <div className={cls.d3}>
-                <div className={cls.top}>
-                    <div className={cls.d}>One</div>
-                    <div className={cls.d5}>One</div>
-                </div>
-            </div>
-            <div className={cls.d4}>
-                <div className={cls.left}>
-                    <div className={cls.d2}>One</div>
-                </div>
-            </div>
+            Comming soon..
         </div>
     )
 }

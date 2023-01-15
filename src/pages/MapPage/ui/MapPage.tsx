@@ -5,18 +5,14 @@ import {Button} from "../../../shared/ui/Button";
 import {Progress} from "../../../shared/ui/Progress/Progress";
 import {CurrentDayCard} from "../../../features/CurrentDayCard/CurrentDayCard";
 import {WeekDayDescCard} from "../../../features/WeekDayDescCard/WeekDayDescCard";
+import cls from "../../AboutPage/ui/del.module.scss";
 
 const MapPage = () => {
     const [isOpened, setIsOpened] = useState(false)
 
     return (
-        <div>
-            <Container>
-                <Button onClick={()=> setIsOpened(true)}>Click</Button>
-                <Modal isOpen={isOpened} onClose={()=> setIsOpened(false)}>
-                    <WeekDayDescCard/>
-                </Modal>
-            </Container>
+        <div className={cls.wrap} id="fullheight">
+            Comming soon..
         </div>
     )
 }

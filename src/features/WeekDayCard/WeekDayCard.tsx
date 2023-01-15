@@ -31,32 +31,21 @@ export const WeekDayCard = observer((props: WeekDayCardProps) => {
         time
     } = props
     const { dataStore } = useStore();
-    const [isOpened, setIsOpened] = useState(false)
-
-    const current = dataStore.currentWeather
-    // console.log(dataStore.currentWeather?.base)
 
     if(!dataStore.currentWeather){
         return (<Loader/>)
     } else return (
-        <>
-            <div className={classNames(cls.CurrentDay, {}, [className])}>
-                <Button theme={ButtonTheme.CLEAR} onClick={()=> setIsOpened(true)}>
-                    <div className={cls.top}>
-                        {date && <div className={cls.date}>{formatDay(new Date(date))}</div>}
-                        {time && <div className={cls.time}>{formatAMPM(new Date(time))}</div>}
-                    </div>
-                    <div className={cls.middle}>
-                        <div className={cls.icon}>{<WeatherIcon/>}</div>
-                    </div>
-                    <div className={cls.bottom}>
-                        <span>{Math.floor(tempt(degree, 'F'))}°</span>
-                    </div>
-                </Button>
+        <div className={classNames(cls.CurrentDay, {}, [className])}>
+            <div className={cls.top}>
+                {date && <div className={cls.date}>{formatDay(new Date(date))}</div>}
+                {time && <div className={cls.time}>{formatAMPM(new Date(time))}</div>}
             </div>
-            <Modal isOpen={isOpened} onClose={()=> setIsOpened(false)}>
-                <WeekDayDescCard dayData={dayData}/>
-            </Modal>
-        </>
+            <div className={cls.middle}>
+                <div className={cls.icon}>{<WeatherIcon/>}</div>
+            </div>
+            <div className={cls.bottom}>
+                <span>{Math.floor(tempt(degree, 'F'))}°</span>
+            </div>
+        </div>
     );
 });

@@ -9,8 +9,10 @@ import {getHourlyTodayWeather, getRainChance, getSearchCity, getWeekWeather} fro
 class DataStore {
     _currentWeather: AllWeather = <AllWeather>{}
     _today: List = <List>{}
+
     _location = ''
     _city: City = <City>{}
+
     _weekDays: List[] = <List[]>{}
     _hourly: List[] = <List[]>[]
     _rainChance: Rain[] = <Rain[]>{}
@@ -93,20 +95,15 @@ class DataStore {
             const week = getWeekWeather(data.list)
             const hourly = getHourlyTodayWeather(data.list)
             // const rain = getRainChance(data.list)
-            const rain = [] as any
-            // const week = [] as any
 
-
-            console.log('WEEK',week)
-            console.log('HOURLY',hourly)
-            console.log('RAIN',rain)
-
+            // console.log('WEEK',week)
+            // console.log('HOURLY',hourly)
 
             this.setToday(data.list[0])
             this.setCity(data.city)
             this.setWeekDays(week)
             this.setHourly(hourly)
-            this.setRainChance(rain)
+            // this.setRainChance(rain)
 
         }catch (e) {
             console.log(e)

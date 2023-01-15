@@ -19,7 +19,7 @@ export const enum Title {
     FEELS_LIKE = 'Feels like',
     WIND_SPEED = 'Wind speed',
     WIND_DIR = 'Wind direction',
-    RAIN = 'Rain',
+    WEATHER = 'Weather',
     CLOUD = 'Cloud',
     PRESSURE = 'Pressure',
     HUMIDITY = 'Humidity',
@@ -69,8 +69,9 @@ export const BottomLeft = observer((props: BottomLeftProps) => {
                 </div>
                 <div className={cls.div4}>
                     <WeatherDescCard
-                        title={Title.RAIN}
+                        title={Title.WEATHER}
                         icon={<Rain/>}
+                        value={today?.weather?.[0]?.main}
                     />
                 </div>
                 <div className={cls.div5}>

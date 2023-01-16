@@ -4,6 +4,53 @@
  */
 
 export default {
+
+    // An array of regexp pattern strings used to skip coverage collection
+    coveragePathIgnorePatterns: [
+        '\\\\node_modules\\\\'
+    ],
+
+    // A set of global variables that need to be available in all test environments
+    globals: {
+        __IS_DEV__: true,
+    },
+
+    // An array of directory names to be searched recursively up from the requiring module's location
+    moduleDirectories: [
+        'node_modules', 'src',
+    ],
+
+    // An array of file extensions your modules use
+    moduleFileExtensions: [
+        'js',
+        'jsx',
+        'ts',
+        'tsx',
+        'json',
+        'node',
+    ],
+
+    rootDir: '../../',
+
+    // The test environment that will be used for testing
+    testEnvironment: 'jsdom',
+
+    // The glob patterns Jest uses to detect test files
+    testMatch: [
+        '**/__tests__/**/*.[jt]s?(x)',
+        '**/?(*.)+(spec|test).[tj]s?(x)',
+    ],
+
+    // Automatically clear mock calls, instances, contexts and results before every test
+    clearMocks: true,
+
+    setupFilesAfterEnv: ['<rootDir>/config/jest/jest-setup.ts'],
+
+    moduleNameMapper: {
+        '\\.(css|scss)$': 'identity-obj-proxy',
+        '\\.svg': '<rootDir>config/jest/__mocks__/JestEmptyComponent',
+    },
+
     // All imported modules in your tests should be mocked automatically
     // automock: false,
 
@@ -12,9 +59,6 @@ export default {
 
     // The directory where Jest should store its cached dependency information
     // cacheDirectory: "C:\\Users\\17866\\AppData\\Local\\Temp\\jest",
-
-    // Automatically clear mock calls, instances, contexts and results before every test
-    clearMocks: true,
 
     // Indicates whether the coverage information should be collected while executing the test
     // collectCoverage: false,
@@ -25,10 +69,7 @@ export default {
     // The directory where Jest should output its coverage files
     // coverageDirectory: undefined,
 
-    // An array of regexp pattern strings used to skip coverage collection
-    coveragePathIgnorePatterns: [
-        '\\\\node_modules\\\\'
-    ],
+
 
     // Indicates which provider should be used to instrument code for coverage
     // coverageProvider: "babel",
@@ -64,30 +105,15 @@ export default {
     // A path to a module which exports an async function that is triggered once after all test suites
     // globalTeardown: undefined,
 
-    // A set of global variables that need to be available in all test environments
-    globals: {
-        __IS_DEV__: true,
-    },
+
 
     // The maximum amount of workers used to run your tests. Can be specified as % or a number. E.g. maxWorkers: 10% will use 10% of your CPU amount + 1 as the maximum worker number. maxWorkers: 2 will use a maximum of 2 workers.
     // maxWorkers: "50%",
 
-    // An array of directory names to be searched recursively up from the requiring module's location
-    moduleDirectories: [
-        'node_modules', 'src',
-    ],
+
     // setupFilesAfterEnv: ['<rootDir>/config/jest/jest-setup.ts'],
 
-    // An array of file extensions your modules use
-    moduleFileExtensions: [
-        'js',
-        'jsx',
-        'ts',
-        'tsx',
-        'json',
-        'node',
-    ],
-    rootDir: '../../',
+
 
     // A map from regular expressions to module names or to arrays of module names that allow to stub out resources with a single module
     // moduleNameMapper: {},
@@ -145,8 +171,7 @@ export default {
     // A list of paths to snapshot serializer modules Jest should use for snapshot testing
     // snapshotSerializers: [],
 
-    // The test environment that will be used for testing
-    testEnvironment: 'jsdom',
+
 
     // Options that will be passed to the testEnvironment
     // testEnvironmentOptions: {},
@@ -154,11 +179,7 @@ export default {
     // Adds a location field to test results
     // testLocationInResults: false,
 
-    // The glob patterns Jest uses to detect test files
-    testMatch: [
-        '**/__tests__/**/*.[jt]s?(x)',
-        '**/?(*.)+(spec|test).[tj]s?(x)',
-    ],
+
 
     // An array of regexp pattern strings that are matched against all test paths, matched tests are skipped
     // testPathIgnorePatterns: [

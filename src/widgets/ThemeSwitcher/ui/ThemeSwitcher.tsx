@@ -1,6 +1,5 @@
 import { memo } from 'react'
-import { Button } from 'shared/ui/Button'
-import { ButtonTheme } from 'shared/ui/Button/Button'
+import {Button, ButtonTheme} from 'shared/ui/Button/Button'
 import {useTheme} from 'app/providers/theme/useTheme';
 import {Theme} from 'app/providers/theme/ThemeContext';
 import {classNames} from 'shared/libs/classNames/classNames';

@@ -4,7 +4,7 @@ export const getWeekWeather = (data: List[]): List[] => {
     const week: List[] = []
     data.map((d: List, index: number) => {
         if (week.length == 4) return
-        if (index % 6 == 0 && index !== 0) {
+        if (index % 8 == 0 && index !== 0) {
             week.push(d)
         }
     })

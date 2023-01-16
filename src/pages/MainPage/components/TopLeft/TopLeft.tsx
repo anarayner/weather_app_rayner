@@ -2,8 +2,7 @@ import cls from './TopLeft.module.scss'
 import {memo, useCallback, useState} from 'react';
 import {classNames} from 'shared/libs/classNames/classNames';
 import {Clock, ClockSize} from 'shared/ui/Clock/Clock';
-import {Button} from 'shared/ui/Button';
-import {ButtonSize, ButtonTheme} from 'shared/ui/Button/Button';
+import {Button, ButtonSize, ButtonTheme} from 'shared/ui/Button/Button';
 import {CurrentDayCard} from 'features/CurrentDayCard/CurrentDayCard';
 import {WeekDayCard} from 'features/WeekDayCard/WeekDayCard';
 import {City, List} from 'store/types/types';

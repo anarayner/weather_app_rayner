@@ -5,13 +5,18 @@
 }
 
 .date_m{
-  display: flex;
-  justify-content: space-between;
-  padding: 0 0 20px 0;
+  display: inline-block;
+  padding: 0 10px 15px 0;
+  width: 100%;
 }
 
 .btn {
   margin-right: 20px;
+}
+
+.btn_container {
+  display: flex;
+  justify-content: space-between;
 }
 
 .weather_container {

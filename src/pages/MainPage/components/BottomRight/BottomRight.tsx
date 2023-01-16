@@ -18,7 +18,7 @@ export const BottomRight = observer(({className, searchHistory}: BottomRightProp
         <div className={classNames(cls.BottomRight, {}, [className])}>
             <div className={cls.container}>
                 <div className={cls.button_container}>
-                    <Button size={ButtonSize.S}>Search History</Button>
+                    <p className={cls.title}>Search History</p>
                     { /*<Button size={ButtonSize.S} className={cls.btn}>Other cities</Button>*/ }
                 </div>
                 { /*<div className={cls.cards_cont}>*/ }

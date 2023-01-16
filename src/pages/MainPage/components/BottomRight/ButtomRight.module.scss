@@ -5,6 +5,10 @@
 
 .container {
   height: calc(100vh - var(--navbar-height) - var(--top-container-height) - 20px);
+
+  .title {
+    padding-left: 15px;
+  }
 }
 .cards_cont {
   overflow-y: scroll;

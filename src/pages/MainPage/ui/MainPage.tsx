@@ -41,8 +41,7 @@ const MainPage = observer(() => {
         <>
             <div className={isMobile? cls.d1_m : cls.d1}><TopLeft /></div>
             <div className={isMobile? cls.d2_m : cls.d2}><TopRight /></div>
-        </>
-    )
+        </>)
 
     if(isMobile){
         return (
@@ -56,7 +55,9 @@ const MainPage = observer(() => {
             </div>
             <div className={cls.bottom}>
                 <div className={cls.d3}><BottomLeft /></div>
-                <div className={cls.d4}><BottomRight searchHistory={searchHistory}/></div>
+                <div className={cls.d4}>
+                    <BottomRight searchHistory={searchHistory}/>
+                </div>
             </div>
         </div>
     )

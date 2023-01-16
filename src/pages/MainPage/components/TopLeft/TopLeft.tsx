@@ -40,9 +40,24 @@ export const TopLeft = observer(({className}: TopLeftProps) => {
 
     return (
         <div className={classNames('', {}, [className])}>
-            <div className={cls.date}>
+            <div className={isMobile? cls.date_m : cls.date}>
                 <Clock size={isMobile? ClockSize.S: ClockSize.L}/>
-                { !isMobile? <Button size={ButtonSize.S} className={cls.btn} onClick={onClickHandler}>{ degreeBtnSnow }°</Button> : null }
+                <div className={cls.btn_container}>
+                    <Button
+                        size={ButtonSize.S}
+                        className={cls.btn}
+                        onClick={onClickHandler}
+                    >
+                        { degreeBtnSnow }°
+                    </Button>
+                    { isMobile?
+                        <Button
+                            size={ButtonSize.S}
+                            onClick={onClickHandler}
+                        >
+                            Search History
+                        </Button> : null }
+                </div>
             </div>
             <div className={isMobile? cls.weather_container_m : cls.weather_container}>
                 <CurrentDayCard />

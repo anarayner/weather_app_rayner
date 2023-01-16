@@ -76,7 +76,6 @@ class DataStore {
         return this._rainChance
     }
 
-
     async fetchCurrentWeather(location?: string, lat?: string, lon?: string ){
         try{
 

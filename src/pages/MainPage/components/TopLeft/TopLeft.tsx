@@ -8,8 +8,9 @@ import {CurrentDayCard} from '../../../../features/CurrentDayCard/CurrentDayCard
 import {WeekDayCard} from '../../../../features/WeekDayCard/WeekDayCard';
 import {City, List} from '../../../../store/types/types';
 import {WeekDayDescCard} from '../../../../features/WeekDayDescCard/WeekDayDescCard';
-import {formatDay} from '../../../../shared/libs/convertData/convertData';
 import {Modal} from '../../../../shared/ui/Modal/Modal';
+import {observer} from 'mobx-react-lite';
+import {useStore} from '../../../../store/store';
 
 
 interface TopLeftProps {
@@ -20,7 +21,7 @@ interface TopLeftProps {
     hourly?: List[]
 }
 
-export const TopLeft = memo((props: TopLeftProps) => {
+export const TopLeft = observer((props: TopLeftProps) => {
     const {
         className,
         today,
@@ -28,16 +29,27 @@ export const TopLeft = memo((props: TopLeftProps) => {
         week,
         hourly
     } = props
+
+    const { valueStore } = useStore();
     const [isOpened, setIsOpened] = useState(false)
     const [activeObject, setActiveObject] = useState(null);
 
+
+    const degree = valueStore.degree
+
     const close = useCallback(()=> setIsOpened(false), []);
+    const [degreeBtn, setDegreeBth] = useState(degree)
+
+    const onClickHandler = useCallback(() => {
+        degree =='F'? setDegreeBth('C') : setDegreeBth('F')
+        valueStore.changeDegree(degreeBtn)
+    }, [degree, degreeBtn, valueStore]);
 
     return (
         <div className={classNames('', {}, [className])}>
             <div className={cls.date}>
                 <Clock size={ClockSize.L}/>
-                <Button size={ButtonSize.S} className={cls.btn}>C °</Button>
+                <Button size={ButtonSize.S} className={cls.btn} onClick={onClickHandler}>{ degreeBtn }°</Button>
             </div>
             <div className={cls.weather_container}>
                 <CurrentDayCard today={today} city={city}/>

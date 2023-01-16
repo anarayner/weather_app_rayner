@@ -25,7 +25,9 @@ interface WeekDayDescCardProps {
 }
 
 export const WeekDayDescCard = observer(({className, dayData}: WeekDayDescCardProps) => {
-    console.log(toJS(dayData))
+
+    const { valueStore } = useStore();
+    const degree = valueStore.degree
     return (
         <div className={classNames(cls.WeekDayDescCard, {}, [className])}>
             <Card padding={Padding.NONE}>
@@ -40,8 +42,8 @@ export const WeekDayDescCard = observer(({className, dayData}: WeekDayDescCardPr
                 <div className={cls.bottom}>
                     <div className={cls.container}>
                         <div className={cls.info1}>
-                            <p><span>Temp:</span> { Math.floor(tempt(dayData?.main?.temp, 'F')) }°F</p>
-                            <p><span>Real Feel:</span>{ Math.floor(tempt(dayData?.main?.feels_like, 'F')) }°F</p>
+                            <p><span>Temp:</span> { Math.floor(tempt(dayData?.main?.temp, degree)) }°{ degree }</p>
+                            <p><span>Real Feel:</span>{ Math.floor(tempt(dayData?.main?.feels_like, degree)) }°{ degree }</p>
                             <p><span>Wind:</span> { dayData?.wind?.speed } m/s</p>
                             <p><span>Pressure:</span> { dayData?.main?.pressure } MB</p>
                             <p><span>Humidity:</span> { dayData?.main?.humidity } %</p>

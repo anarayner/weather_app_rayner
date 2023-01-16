@@ -30,7 +30,8 @@ export const WeekDayCard = observer((props: WeekDayCardProps) => {
         date,
         time
     } = props
-    const { dataStore } = useStore();
+    const { dataStore, valueStore } = useStore();
+    const degreeValue = valueStore.degree
 
     if(!dataStore.currentWeather){
         return (<Loader/>)
@@ -44,7 +45,7 @@ export const WeekDayCard = observer((props: WeekDayCardProps) => {
                 <div className={cls.icon}>{ <WeatherIcon/> }</div>
             </div>
             <div className={cls.bottom}>
-                <span>{ Math.floor(tempt(degree, 'F')) }°</span>
+                <span>{ Math.floor(tempt(degree, degreeValue)) }°</span>
             </div>
         </div>
     );

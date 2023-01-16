@@ -15,7 +15,7 @@ const MainPage = observer(() => {
 
     const { dataStore } = useStore();
     const location = useGeoLocation()
-    console.log('LOCATION',location)
+
     useEffect(() => {
         if(location.loaded) {
             dataStore.fetchCurrentWeather('', location.coordinates.lat, location.coordinates.lng)

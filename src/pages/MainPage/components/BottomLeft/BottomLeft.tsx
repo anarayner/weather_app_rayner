@@ -13,6 +13,7 @@ import Humidity from '../../../../shared/assets/icons/humidity.svg'
 import Level from '../../../../shared/assets/icons/level-slider.svg'
 import Sunrise from '../../../../shared/assets/icons/sunrise.svg'
 import {tempt} from '../../../../shared/libs/convertData/convertData';
+import {useStore} from '../../../../store/store';
 
 
 export const enum Title {
@@ -43,13 +44,15 @@ export const BottomLeft = observer((props: BottomLeftProps) => {
     if(!today?.main?.temp){
         return (<div>Loading..</div>)
     }
+    const { valueStore } = useStore();
+    const degree = valueStore.degree
     return (
         <div className={classNames(cls.BottomLeft, {}, [className])}>
             <div className={cls.card_grid}>
                 <div className={cls.div1}>
                     <WeatherDescCard title={Title.FEELS_LIKE}
                         icon={<FeelLike/>}
-                        value={Math.floor(tempt(today?.main?.temp, 'F'))+'°F'}
+                        value={Math.floor(tempt(today?.main?.temp, degree))+`°${degree}`}
                     />
                 </div>
                 <div className={cls.div2}>

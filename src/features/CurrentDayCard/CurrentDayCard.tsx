@@ -4,7 +4,6 @@ import {useStore} from '../../store/store';
 import {Card, Padding} from '../../shared/ui/Card/Card';
 import WeatherIcon from '../../shared/assets/icons/coudy.svg'
 import {observer} from 'mobx-react-lite';
-import {Loader} from '../../shared/ui/Loader/Loader';
 import {formatAMPM, formatDayOfWeek, tempt} from '../../shared/libs/convertData/convertData';
 import {City, List} from '../../store/types/types';
 
@@ -21,6 +20,8 @@ export const CurrentDayCard = observer((props: CurrentDayProps) => {
         today,
         city
     } = props
+    const { valueStore } = useStore();
+    const degree = valueStore.degree
 
     return (
         <div className={classNames(cls.CurrentDay, {}, [className])}>
@@ -30,12 +31,12 @@ export const CurrentDayCard = observer((props: CurrentDayProps) => {
                     <div className={cls.time}>{ today?.weather?.[0]?.main }</div>
                 </div>
                 <div className={cls.middle}>
-                    <span className={cls.degree}>{ Math.floor(tempt(today?.main?.temp, 'F')) }°F</span>
+                    <span className={cls.degree}>{ Math.floor(tempt(today?.main?.temp, degree)) }°{ degree }</span>
                     <div className={cls.icon}>{ <WeatherIcon/> }</div>
                 </div>
                 <div className={cls.bottom}>
                     <div className={cls.info}>
-                        <span>Real Feel:</span> { Math.floor(tempt(today?.main?.feels_like, 'F')) }°F
+                        <span>Real Feel:</span> { Math.floor(tempt(today?.main?.feels_like, degree)) }°{ degree }
                     </div>
                     <div className={cls.info}>
                         <span>Wind:</span> { today?.wind?.speed } m/s

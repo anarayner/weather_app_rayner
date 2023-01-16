@@ -15,7 +15,7 @@ const MainPage = observer(() => {
     const { dataStore } = useStore();
 
     useEffect(() => {
-        dataStore.fetchCurrentWeather('')
+        dataStore.fetchCurrentWeather('Chattanooga')
     }, [dataStore]);
 
     const city = dataStore.city

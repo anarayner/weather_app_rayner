@@ -4,6 +4,7 @@ import {Progress} from 'shared/ui/Progress/Progress';
 import {observer} from 'mobx-react-lite';
 import {formatAMPM, formatDay} from 'shared/libs/convertData/convertData';
 import {useStore} from 'store/store';
+import {isMobile} from 'react-device-detect';
 
 
 interface TopRightProps {
@@ -18,7 +19,7 @@ export const TopRight = observer(({className}: TopRightProps) => {
 
     return (
         <div className={classNames(cls.TopRight, {}, [className])}>
-            <div className={cls.container}>
+            <div className={isMobile? cls.container_m : cls.container}>
                 <p className={cls.title}>Cloud, %</p>
                 <div className={cls.data}>
                     { hourly.map((day) =>

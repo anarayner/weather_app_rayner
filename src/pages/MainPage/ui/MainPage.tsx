@@ -37,19 +37,22 @@ const MainPage = observer(() => {
     const searchObject =  getSearchCity(today, city?.name, currentLocation)
     const searchHistory = localStorageSave(searchObject)
 
+    const content = (
+        <>
+            <div className={isMobile? cls.d1_m : cls.d1}><TopLeft /></div>
+            <div className={isMobile? cls.d2_m : cls.d2}><TopRight /></div>
+        </>
+    )
+
     if(isMobile){
         return (
-            <div className={cls.wrapper_mobile}>
-                <div className={cls.d1_m}><TopLeft /></div>
-                <div className={cls.d2}><TopRight /></div>
-            </div>
+            <div className={cls.wrapper_mobile}>{ content }</div>
         )}
 
     return (
-        <div className={isMobile? cls.wrapper_mobile: cls.wrapper} id="fullheight">
+        <div className={cls.wrapper} id="fullheight">
             <div className={cls.top}>
-                <div className={isMobile? cls.d1_m : cls.d1}><TopLeft /></div>
-                <div className={cls.d2}><TopRight /></div>
+                { content }
             </div>
             <div className={cls.bottom}>
                 <div className={cls.d3}><BottomLeft /></div>

@@ -4,6 +4,7 @@ import {classNames} from 'shared/libs/classNames/classNames';
 import {formatAMPM, formatDayWithYear} from 'shared/libs/convertData/convertData';
 import {observer} from 'mobx-react-lite';
 import {useStore} from 'store/store';
+import {isMobile} from 'react-device-detect';
 
 export const enum ClockSize {
     S = 'size_s',
@@ -32,8 +33,8 @@ export const Clock = observer(({className, size}: ClockProps) => {
     return (
         <div className={classNames(cls.Clock, {}, [className, cls[size]])}>
             <p>Today in { city?.name }</p>
-            <p className={cls.day}>{ day }</p>
-            <p className={cls.time}>{ time }</p>
+            <p className={isMobile? cls.day_m : cls.day}>{ day }</p>
+            <p className={isMobile? cls.time_m : cls.time}>{ time }</p>
         </div>
     );
 });

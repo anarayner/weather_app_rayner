@@ -1,15 +1,9 @@
-.wrap{
-  padding-left: 30px;
-  width: 100%;
-  height: 100%;
-
-  div {
-    flex: 1;
-  }
-}
-
 .wrapper{
   padding-left: 30px;
+}
+
+.wrapper_mobile{
+  padding-left: 7px;
 }
 
 .top {
@@ -25,26 +19,27 @@
   height: 100%;
 }
 
-.div1 {
-  //background: #041c65;
+.d1 {
   height: var(--top-container-height);
   flex: 1;
   overflow-x: auto;
 }
 
-.div2 {
-  //background: #b5b4ff;
+.d1_m {
+  height: 600px;
+}
+
+.d2 {
   width: 350px;
 }
 
-.div3 {
-  //background: coral;
+.d3 {
   flex: 1;
 }
 
-.div4 {
-  //background: aquamarine;
+.d4 {
   width: 350px;
 }
+
 
 

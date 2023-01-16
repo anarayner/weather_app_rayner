@@ -1,14 +1,23 @@
-.CurrentDay {
+.WeekDayCard {
   background: var(--bg-color-inverted);
   border-radius: 30px;
   max-width: 120px;
   height: 270px;
   color: var(--primary-color);
-  //margin-left: 20px;
   transition: all .2s ease-in-out;
-
 }
-.CurrentDay:hover { transform: scale(1.1); }
+.WeekDayCard:hover { transform: scale(1.1); }
+
+.WeekDayCard_m {
+  margin-top: 7px;
+  background: var(--bg-color-inverted);
+  margin-right: 7px;
+  border-radius: 30px;
+  max-width: 120px;
+  height: 150px;
+  color: var(--primary-color);
+  transition: all .2s ease-in-out;
+}
 
 .top{
   background: var(--bg-color-inverted);

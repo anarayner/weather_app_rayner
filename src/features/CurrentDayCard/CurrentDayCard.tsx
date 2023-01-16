@@ -6,25 +6,22 @@ import WeatherIcon from 'shared/assets/icons/coudy.svg'
 import {observer} from 'mobx-react-lite';
 import {formatAMPM, formatDayOfWeek, tempt} from 'shared/libs/convertData/convertData';
 import {City, List} from 'store/types/types';
+import {isMobile} from 'react-device-detect';
 
 
 interface CurrentDayProps {
     className?: string;
-    city?: City;
-    today?: List;
 }
 
-export const CurrentDayCard = observer((props: CurrentDayProps) => {
-    const {
-        className,
-        today,
-        city
-    } = props
-    const { valueStore } = useStore();
+export const CurrentDayCard = observer(({className}: CurrentDayProps) => {
+
+    const { valueStore, dataStore } = useStore();
     const degree = valueStore.degree
+    const city = dataStore.city
+    const today = dataStore.today
 
     return (
-        <div className={classNames(cls.CurrentDay, {}, [className])}>
+        <div className={classNames(isMobile? cls.CurrentDay_m : cls.CurrentDay, {}, [className])}>
             <Card padding={Padding.NONE}>
                 <div className={cls.top}>
                     <div className={cls.day}>{ formatDayOfWeek(new Date(today?.dt_txt)) }</div>

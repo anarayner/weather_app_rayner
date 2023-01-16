@@ -6,6 +6,7 @@ import {observer} from 'mobx-react-lite';
 import {Loader} from 'shared/ui/Loader/Loader';
 import {Main} from 'store/types/types';
 import {formatAMPM, formatDay, tempt} from 'shared/libs/convertData/convertData';
+import {isMobile} from 'react-device-detect';
 
 
 interface WeekDayCardProps {
@@ -30,13 +31,13 @@ export const WeekDayCard = observer((props: WeekDayCardProps) => {
     if(!dataStore.currentWeather){
         return (<Loader/>)
     } else return (
-        <div className={classNames(cls.CurrentDay, {}, [className])}>
+        <div className={classNames(isMobile? cls.WeekDayCard_m : cls.WeekDayCard, {}, [className])}>
             <div className={cls.top}>
                 { date && <div className={cls.date}>{ formatDay(new Date(date)) }</div> }
                 { time && <div className={cls.time}>{ formatAMPM(new Date(time)) }</div> }
             </div>
             <div className={cls.middle}>
-                <div className={cls.icon}>{ <WeatherIcon/> }</div>
+                { !isMobile?<div className={cls.icon}>{ <WeatherIcon/> }</div> : null }
             </div>
             <div className={cls.bottom}>
                 <span>{ Math.floor(tempt(degree, degreeValue)) }°</span>

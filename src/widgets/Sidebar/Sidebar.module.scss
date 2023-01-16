@@ -8,6 +8,16 @@
   justify-content: center;
 }
 
+.SidebarMobile{
+  height: 100%;
+  width: var(--sidebar-width-mobile);
+  background: var(--bg-color-inverted);
+  border-radius: 30px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
 .sidebar_btn {
   padding-top: 20px;
   margin-left: 15px;

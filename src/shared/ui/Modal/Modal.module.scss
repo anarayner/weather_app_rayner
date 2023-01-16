@@ -27,6 +27,13 @@
   max-width: 60%;
 }
 
+.content_m{
+  padding: 20px;
+  border-radius: 30px;
+  background: var(--bg-color-inverted);
+  max-width: 90%;
+}
+
 .opened {
   pointer-events: auto;
   opacity: 1;

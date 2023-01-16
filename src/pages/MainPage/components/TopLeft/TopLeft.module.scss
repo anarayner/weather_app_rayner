@@ -4,6 +4,12 @@
   padding: 0 0 20px 0;
 }
 
+.date_m{
+  display: flex;
+  justify-content: space-between;
+  padding: 0 0 20px 0;
+}
+
 .btn {
   margin-right: 20px;
 }
@@ -12,5 +18,10 @@
   padding-top: 10px;
   display: flex;
   gap: 1em;
+  width: 100%;
+}
+
+.weather_container_m {
+  display: inline-block;
   width: 100%;
 }

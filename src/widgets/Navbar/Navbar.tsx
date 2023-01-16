@@ -4,7 +4,9 @@ import {Input} from 'shared/ui/Input/Input';
 import LocationIcon from 'shared/assets/icons/location.svg'
 import {observer} from 'mobx-react-lite';
 import {useStore} from 'store/store';
-import React, {useState} from 'react';
+import React, {useCallback, useState} from 'react';
+import {Simulate} from 'react-dom/test-utils';
+import input = Simulate.input;
 
 interface NavbarProps {
     className?: string;
@@ -17,13 +19,15 @@ export const Navbar =
 
         const [location, setLocation] = useState('')
 
-        const handleKeyPress = (event: React.KeyboardEvent<HTMLElement>) => {
+        const handleKeyPress = useCallback((event: React.KeyboardEvent<HTMLElement>) => {
             if(event.key == 'Enter'){
                 event.preventDefault()
                 dataStore.fetchCurrentWeather(location)
                 setLocation('')
             }
-        };
+        },[dataStore, location]);
+
+        
         return (
             <div className={classNames(cls.Navbar, {}, [className])}>
                 <div className={cls.location}>

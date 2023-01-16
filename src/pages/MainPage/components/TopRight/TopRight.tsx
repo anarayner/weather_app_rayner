@@ -1,20 +1,20 @@
 import cls from './TopRight.module.scss'
-import {memo} from 'react';
 import {classNames} from 'shared/libs/classNames/classNames';
 import {Progress} from 'shared/ui/Progress/Progress';
-import {List, Rain} from 'store/types/types';
 import {observer} from 'mobx-react-lite';
 import {formatAMPM, formatDay} from 'shared/libs/convertData/convertData';
+import {useStore} from 'store/store';
 
 
 interface TopRightProps {
     className?: string;
-    rainChance?: Rain[];
-    week?: List[];
-    hourly?: List[];
 }
 
-export const TopRight = observer(({className, rainChance, hourly, week}: TopRightProps) => {
+export const TopRight = observer(({className}: TopRightProps) => {
+    const { dataStore } = useStore();
+
+    const week = dataStore.weekDays
+    const hourly = dataStore.hourly
 
     return (
         <div className={classNames(cls.TopRight, {}, [className])}>

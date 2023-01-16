@@ -5,6 +5,7 @@ import {Sidebar} from './widgets/Sidebar/Sidebar';
 import {Navbar} from './widgets/Navbar/Navbar';
 import {Loader} from './shared/ui/Loader/Loader';
 import {AppRouter} from './app/providers/router';
+import {isMobile} from 'react-device-detect';
 
 
 const App = () => {
@@ -14,7 +15,7 @@ const App = () => {
         <div className={`app ${theme}`}>
             <Suspense fallback={<div className={'loader'}><Loader/></div>}>
                 <Navbar/>
-                <div className='content-page'>
+                <div className={isMobile? 'content-page_m': 'content-page'} >
                     <Sidebar/>
                     <AppRouter/>
                 </div>

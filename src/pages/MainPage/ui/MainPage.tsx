@@ -7,9 +7,12 @@ import {BottomRight} from '../components/BottomRight/BottomRight';
 import {TopRight} from '../components/TopRight/TopRight';
 import {Loader} from 'shared/ui/Loader/Loader';
 import 'app/styles/index.scss'
-import cls from '../../AboutPage/ui/del.module.scss';
+import cls from './MainPage.module.scss';
 import {getSearchCity} from 'shared/libs/helpers/getData';
 import {useGeoLocation} from 'shared/libs/hooks/useGeolocation'
+import {localStorageSave} from 'shared/libs/helpers/localStorage';
+import {isMobile} from 'react-device-detect';
+
 
 const MainPage = observer(() => {
 
@@ -24,8 +27,7 @@ const MainPage = observer(() => {
 
     const city = dataStore.city
     const today = dataStore.today
-    const week = dataStore.weekDays
-    const hourly = dataStore.hourly
+
     const currentLocation = dataStore.location
 
     if(!today?.main?.temp){
@@ -33,27 +35,24 @@ const MainPage = observer(() => {
     }
 
     const searchObject =  getSearchCity(today, city?.name, currentLocation)
+    const searchHistory = localStorageSave(searchObject)
 
-    const searchHistory = JSON.parse(localStorage.getItem('searchHistory') || '[]');
-    console.log('searchHistory',searchHistory)
-    const hasSearch = searchHistory.some((d:any) => d?.city == searchObject?.city)
-    console.log('hasSearch', hasSearch)
-
-    if(searchObject && !hasSearch){
-        searchHistory.unshift(searchObject)
-        localStorage.setItem('searchHistory', JSON.stringify(searchHistory));
-    }
-
+    if(isMobile){
+        return (
+            <div className={cls.wrapper_mobile} id="fullheight">
+                <div className={cls.d1_m}><TopLeft /></div>
+            </div>
+        )}
 
     return (
-        <div className={cls.wrapper} id="fullheight">
+        <div className={isMobile? cls.wrapper_mobile: cls.wrapper} id="fullheight">
             <div className={cls.top}>
-                <div className={cls.div1}><TopLeft today={today} city={city} week={week} hourly={hourly}/></div>
-                <div className={cls.div2}><TopRight week={week} hourly={hourly}/></div>
+                <div className={isMobile? cls.d1_m : cls.d1}><TopLeft /></div>
+                <div className={cls.d2}><TopRight /></div>
             </div>
             <div className={cls.bottom}>
-                <div className={cls.div3}><BottomLeft today={today} city={city}/></div>
-                <div className={cls.div4}><BottomRight searchHistory={searchHistory}/></div>
+                <div className={cls.d3}><BottomLeft /></div>
+                <div className={cls.d4}><BottomRight searchHistory={searchHistory}/></div>
             </div>
         </div>
     )

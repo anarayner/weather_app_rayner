@@ -8,6 +8,7 @@ import CalendarIcon from 'shared/assets/icons/calendar.svg';
 import MapIcon from 'shared/assets/icons/location_large.svg';
 import { useNavigate } from 'react-router-dom';
 import {RoutePath} from 'app/providers/router/config/routeConfig';
+import {isMobile} from 'react-device-detect';
 
 interface SidebarProps {
     className?: string;
@@ -16,8 +17,8 @@ interface SidebarProps {
 export const Sidebar = memo(({className}: SidebarProps) => {
     const navigate = useNavigate();
 
-    return (
-        <div className={classNames(cls.Sidebar, {}, [className])}>
+    const content = (
+        <>
             <div className={cls.sidebar_btn}>
                 <Button
                     onClick={()=>navigate(RoutePath.main)}
@@ -44,6 +45,12 @@ export const Sidebar = memo(({className}: SidebarProps) => {
             <div className={cls.switcher}>
                 <ThemeSwitcher/>
             </div>
+        </>
+    )
+
+    return (
+        <div className={classNames(isMobile? cls.SidebarMobile : cls.Sidebar, {}, [className])}>
+            { content }
         </div>
     );
 });

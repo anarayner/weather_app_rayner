@@ -20,7 +20,15 @@ body {
 .content-page{
     display: flex;
     height: calc(100vh - var(--navbar-height));
-    padding: 10px 0px 30px 30px;
+    padding: 10px 0px 30px 15px;
+    width: 100%;
+    overflow: auto;
+}
+
+.content-page_m{
+    display: flex;
+    height: calc(100vh - var(--navbar-height-mobile));
+    padding: 0px 0px 25px 10px;
     width: 100%;
     overflow: auto;
 }

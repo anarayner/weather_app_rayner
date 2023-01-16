@@ -2,7 +2,6 @@ import cls from './BottomLeft.module.scss'
 import {classNames} from 'shared/libs/classNames/classNames';
 import {WeatherDescCard} from 'features/WeatherDescCard/WeatherDescCard';
 import {observer} from 'mobx-react-lite';
-import {City, List} from 'store/types/types';
 import FeelLike from 'shared/assets/icons/temperature.svg'
 import WindSpeed from 'shared/assets/icons/wind.svg'
 import WindDir from 'shared/assets/icons/wind-ne.svg'
@@ -14,38 +13,23 @@ import Level from 'shared/assets/icons/level-slider.svg'
 import Sunrise from 'shared/assets/icons/sunrise.svg'
 import {tempt} from 'shared/libs/convertData/convertData';
 import {useStore} from 'store/store';
-
-
-export const enum Title {
-    FEELS_LIKE = 'Feels like',
-    WIND_SPEED = 'Wind speed',
-    WIND_DIR = 'Wind direction',
-    WEATHER = 'Weather',
-    CLOUD = 'Cloud',
-    PRESSURE = 'Pressure',
-    HUMIDITY = 'Humidity',
-    GRND_LEVER = 'Ground level',
-    WIND_GUST = 'Wind gust',
-    SUNSET = 'backgroundRound'
-}
+import {Title} from 'shared/consts/consts';
 
 interface BottomLeftProps {
     className?: string;
-    city?: City;
-    today?: List;
 }
 
-export const BottomLeft = observer((props: BottomLeftProps) => {
-    const {
-        className,
-        today,
-        city,
-    } = props;
+export const BottomLeft = observer(({className}: BottomLeftProps) => {
+
+    const { dataStore, valueStore } = useStore();
+    
+    const today = dataStore.today
+    const degree = valueStore.degree
+
     if(!today?.main?.temp){
         return (<div>Loading..</div>)
     }
-    const { valueStore } = useStore();
-    const degree = valueStore.degree
+    
     return (
         <div className={classNames(cls.BottomLeft, {}, [className])}>
             <div className={cls.card_grid}>

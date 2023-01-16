@@ -85,7 +85,7 @@ class DataStore {
                 const loc = await axios.get(`http://api.openweathermap.org/geo/1.0/zip?zip=E14,GB&appid=${API_KEY}`)
                 location = loc.data.name
                 console.log(location)
-                if(!this._location) this.setLocation(location)
+                if(!this._location) this.setLocation('Chattanooga')
             }
 
             const data = await fetchAllWeather(location)

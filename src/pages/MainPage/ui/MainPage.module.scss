@@ -4,6 +4,8 @@
 
 .wrapper_mobile{
   padding-left: 7px;
+  height: 100%;
+  overflow-y: auto;
 }
 
 .top {
@@ -26,7 +28,7 @@
 }
 
 .d1_m {
-  height: 600px;
+  height: 100%;
 }
 
 .d2 {

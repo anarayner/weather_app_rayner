@@ -26,7 +26,7 @@ export const Clock = observer(({className, size}: ClockProps) => {
     const time = formatAMPM(currentTime)
 
     useEffect(() => {
-        setInterval(() => setCurrentTime(new Date()), 1000);
+        setInterval(() => setCurrentTime(new Date()), 60000);
     }, []);
 
     const city = dataStore.city

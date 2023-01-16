@@ -20,8 +20,6 @@ export const TopLeft = observer(({className}: TopLeftProps) => {
 
     const { dataStore, valueStore } = useStore();
 
-    const city = dataStore.city
-    const today = dataStore.today
     const week = dataStore.weekDays
     const hourly = dataStore.hourly
     const degree = valueStore.degree
@@ -32,7 +30,6 @@ export const TopLeft = observer(({className}: TopLeftProps) => {
     const [degreeBtn, setDegreeBth] = useState(degree)
 
     const degreeBtnSnow = degreeBtn == 'F'? 'C' : 'F'
-
 
     const close = useCallback(()=> setIsOpened(false), []);
 

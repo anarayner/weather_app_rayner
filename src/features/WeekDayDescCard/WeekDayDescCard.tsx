@@ -11,6 +11,7 @@ import {
     formatDayOfWeek,
     tempt
 } from 'shared/libs/convertData/convertData';
+import {isMobile} from 'react-device-detect';
 
 interface WeekDayDescCardProps {
     className?: string;
@@ -40,9 +41,9 @@ export const WeekDayDescCard = observer(({className, dayData}: WeekDayDescCardPr
                             <p><span>Wind:</span> { dayData?.wind?.speed } m/s</p>
                             <p><span>Pressure:</span> { dayData?.main?.pressure } MB</p>
                             <p><span>Humidity:</span> { dayData?.main?.humidity } %</p>
-                            <p><span>Ground level:</span> { dayData?.main?.grnd_level } %</p>
+                            <p><span>Ground level:</span> { dayData?.main?.grnd_level } hPa</p>
                         </div>
-                        <div className={cls.info2}>
+                        <div className={isMobile? cls.info2_m : cls.info2}>
                             <p><span>Weather:</span>{ dayData?.weather?.[0]?.main }</p>
                             <p><span>Description:</span>{ dayData?.weather?.[0]?.description }</p>
                         </div>

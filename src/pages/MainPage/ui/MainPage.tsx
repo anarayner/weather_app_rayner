@@ -39,7 +39,7 @@ const MainPage = observer(() => {
 
     if(isMobile){
         return (
-            <div className={cls.wrapper_mobile} id="fullheight">
+            <div className={cls.wrapper_mobile}>
                 <div className={cls.d1_m}><TopLeft /></div>
             </div>
         )}

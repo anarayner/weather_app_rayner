@@ -1,9 +1,7 @@
 import {makeAutoObservable} from 'mobx'
-import {AllWeather, City, List, Rain, SearchHistory} from './types/types';
-import axios from 'axios';
-import {API_KEY} from '../shared/consts/consts';
-import {fetchAllWeather} from '../services/currentWeather';
-import {getHourlyTodayWeather, getRainChance, getSearchCity, getWeekWeather} from '../shared/libs/helpers/getData';
+import {AllWeather, City, List, Rain} from './types/types';
+import {fetchAllWeather, fetchAllWeatherByGeo} from '../services/currentWeather';
+import {getHourlyTodayWeather, getWeekWeather} from '../shared/libs/helpers/getData';
 
 
 class DataStore {
@@ -79,17 +77,16 @@ class DataStore {
     }
 
 
-    async fetchCurrentWeather(location: string){
+    async fetchCurrentWeather(location?: string, lat?: string, lon?: string ){
         try{
-            if(location.length == 0){
-                // const loc = await axios.get(`http://api.openweathermap.org/geo/1.0/zip?zip=E14,GB&appid=${API_KEY}`)
-                // location = loc.data.name
-                // console.log(location)
-                // if(!this._location) this.setLocation('Chattanooga')
-                this.setLocation('Chattanooga')
-            }
 
-            const data = await fetchAllWeather(location)
+            let data: AllWeather
+            if(location){
+                data = await fetchAllWeather(location)
+            } else {
+                data = await fetchAllWeatherByGeo(lat, lon)
+                this.setLocation(data.city.name)
+            }
             console.log(data)
             this.setCurrentWeather(data)
 

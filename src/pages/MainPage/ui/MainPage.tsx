@@ -9,14 +9,18 @@ import {Loader} from '../../../shared/ui/Loader/Loader';
 import '../../../app/styles/index.scss'
 import cls from '../../AboutPage/ui/del.module.scss';
 import {getSearchCity} from '../../../shared/libs/helpers/getData';
+import {useGeoLocation} from '../../../shared/libs/hooks/useGeolocation'
 
 const MainPage = observer(() => {
 
     const { dataStore } = useStore();
-
+    const location = useGeoLocation()
+    console.log('LOCATION',location)
     useEffect(() => {
-        dataStore.fetchCurrentWeather('Chattanooga')
-    }, [dataStore]);
+        if(location.loaded) {
+            dataStore.fetchCurrentWeather('', location.coordinates.lat, location.coordinates.lng)
+        }
+    }, [dataStore, location.coordinates.lat, location.coordinates.lng, location.loaded]);
 
     const city = dataStore.city
     const today = dataStore.today

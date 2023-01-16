@@ -12,3 +12,9 @@ export const fetchAllWeather = async (location: string)=>{
     // console.log(data)
     return data
 }
+
+export const fetchAllWeatherByGeo = async (lat: string, lon: string)=>{
+    const {data} = await $api.get(`forecast?lat=${lat}&lon=${lon}&appid=${API_KEY}`)
+    // console.log(data)
+    return data
+}

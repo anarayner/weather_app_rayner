@@ -46,28 +46,30 @@ export const TopLeft = observer(({className}: TopLeftProps) => {
             </div>
             <div className={isMobile? cls.weather_container_m : cls.weather_container}>
                 <CurrentDayCard />
-                { hourly.map((day) =>
-                    <Button
-                        key={day?.dt}
-                        theme={ButtonTheme.CLEAR}
-                        onClick={()=> {
-                            setIsOpened(true)
-                            setActiveObject(day);
-                        }}>
-                        <WeekDayCard key={day?.dt} time={day?.dt_txt} degree={day?.main?.temp}/>
-                    </Button>
-                ) }
-                { week.map((day) =>
-                    <Button
-                        key={day?.dt}
-                        theme={ButtonTheme.CLEAR}
-                        onClick={()=> {
-                            setIsOpened(true)
-                            setActiveObject(day);
-                        }}>
-                        <WeekDayCard  date={day?.dt_txt} degree={day?.main?.temp}/>
-                    </Button>
-                ) }
+                <div className={isMobile? cls.days_m : cls.days} >
+                    { hourly.map((day) =>
+                        <Button
+                            key={day?.dt}
+                            theme={ButtonTheme.CLEAR}
+                            onClick={()=> {
+                                setIsOpened(true)
+                                setActiveObject(day);
+                            }}>
+                            <WeekDayCard key={day?.dt} time={day?.dt_txt} degree={day?.main?.temp}/>
+                        </Button>
+                    ) }
+                    { week.map((day) =>
+                        <Button
+                            key={day?.dt}
+                            theme={ButtonTheme.CLEAR}
+                            onClick={()=> {
+                                setIsOpened(true)
+                                setActiveObject(day);
+                            }}>
+                            <WeekDayCard  date={day?.dt_txt} degree={day?.main?.temp}/>
+                        </Button>
+                    ) }
+                </div>
             </div>
             <Modal isOpen={isOpened} onClose={close}>
                 <WeekDayDescCard dayData={activeObject} />

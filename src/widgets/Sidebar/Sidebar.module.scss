@@ -9,11 +9,11 @@
 }
 
 .SidebarMobile{
-  height: 96%;
+  height: 85%;
   width: var(--sidebar-width-mobile);
   background: var(--bg-color-inverted);
   border-radius: 30px;
-  position: relative;
+  position: fixed;
   display: flex;
   justify-content: center;
 }

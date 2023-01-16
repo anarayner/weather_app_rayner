@@ -41,6 +41,7 @@ const MainPage = observer(() => {
         return (
             <div className={cls.wrapper_mobile}>
                 <div className={cls.d1_m}><TopLeft /></div>
+                <div className={cls.d2}><TopRight /></div>
             </div>
         )}
 

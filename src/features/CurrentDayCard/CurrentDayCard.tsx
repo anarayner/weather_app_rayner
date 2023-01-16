@@ -1,11 +1,11 @@
 import cls from './CurrentDayCard.module.scss'
-import {classNames} from '../../shared/libs/classNames/classNames';
-import {useStore} from '../../store/store';
-import {Card, Padding} from '../../shared/ui/Card/Card';
-import WeatherIcon from '../../shared/assets/icons/coudy.svg'
+import {classNames} from 'shared/libs/classNames/classNames';
+import {useStore} from 'store/store';
+import {Card, Padding} from 'shared/ui/Card/Card';
+import WeatherIcon from 'shared/assets/icons/coudy.svg'
 import {observer} from 'mobx-react-lite';
-import {formatAMPM, formatDayOfWeek, tempt} from '../../shared/libs/convertData/convertData';
-import {City, List} from '../../store/types/types';
+import {formatAMPM, formatDayOfWeek, tempt} from 'shared/libs/convertData/convertData';
+import {City, List} from 'store/types/types';
 
 
 interface CurrentDayProps {

@@ -1,23 +1,16 @@
 import cls from './WeekDayDescCard.module.scss'
-import {classNames} from '../../shared/libs/classNames/classNames';
-import {Card, Padding} from '../../shared/ui/Card/Card';
+import {classNames} from 'shared/libs/classNames/classNames';
+import {Card, Padding} from 'shared/ui/Card/Card';
 import WeatherIcon from '../../shared/assets/icons/coudy.svg';
-import {useStore} from '../../store/store';
+import {useStore} from 'store/store';
 import {observer} from 'mobx-react-lite';
-import {List, Main} from '../../store/types/types';
-import {Loader} from '../../shared/ui/Loader/Loader';
+import {List} from 'store/types/types';
 import '../../app/styles/index.scss'
 import {
-    formatAMPM,
     formatDay,
     formatDayOfWeek,
-    formatDayWithYear,
     tempt
-} from '../../shared/libs/convertData/convertData';
-import {toJS} from 'mobx';
-
-
-
+} from 'shared/libs/convertData/convertData';
 
 interface WeekDayDescCardProps {
     className?: string;

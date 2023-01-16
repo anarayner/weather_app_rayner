@@ -1,11 +1,11 @@
 import cls from './OtherCitiesCard.module.scss'
-import {classNames} from '../../shared/libs/classNames/classNames';
-import {Card, Padding} from '../../shared/ui/Card/Card';
-import WeatherIcon from '../../shared/assets/icons/coudy_small.svg'
+import {classNames} from 'shared/libs/classNames/classNames';
+import {Card, Padding} from 'shared/ui/Card/Card';
+import WeatherIcon from 'shared/assets/icons/coudy_small.svg'
 import {observer} from 'mobx-react-lite';
-import {tempt} from '../../shared/libs/convertData/convertData';
-import {Button, ButtonTheme} from '../../shared/ui/Button/Button';
-import {useStore} from '../../store/store';
+import {tempt} from 'shared/libs/convertData/convertData';
+import {Button, ButtonTheme} from 'shared/ui/Button/Button';
+import {useStore} from 'store/store';
 
 
 interface OtherCitiesCardProps {

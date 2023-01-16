@@ -1,19 +1,19 @@
 import cls from './BottomLeft.module.scss'
-import {classNames} from '../../../../shared/libs/classNames/classNames';
-import {WeatherDescCard} from '../../../../features/WeatherDescCard/WeatherDescCard';
+import {classNames} from 'shared/libs/classNames/classNames';
+import {WeatherDescCard} from 'features/WeatherDescCard/WeatherDescCard';
 import {observer} from 'mobx-react-lite';
-import {City, List} from '../../../../store/types/types';
-import FeelLike from '../../../../shared/assets/icons/temperature.svg'
-import WindSpeed from '../../../../shared/assets/icons/wind.svg'
-import WindDir from '../../../../shared/assets/icons/wind-ne.svg'
-import Rain from '../../../../shared/assets/icons/rain.svg'
-import Cloud from '../../../../shared/assets/icons/cloud.svg'
-import Pressure from '../../../../shared/assets/icons/pressure.svg'
-import Humidity from '../../../../shared/assets/icons/humidity.svg'
-import Level from '../../../../shared/assets/icons/level-slider.svg'
-import Sunrise from '../../../../shared/assets/icons/sunrise.svg'
-import {tempt} from '../../../../shared/libs/convertData/convertData';
-import {useStore} from '../../../../store/store';
+import {City, List} from 'store/types/types';
+import FeelLike from 'shared/assets/icons/temperature.svg'
+import WindSpeed from 'shared/assets/icons/wind.svg'
+import WindDir from 'shared/assets/icons/wind-ne.svg'
+import Rain from 'shared/assets/icons/rain.svg'
+import Cloud from 'shared/assets/icons/cloud.svg'
+import Pressure from 'shared/assets/icons/pressure.svg'
+import Humidity from 'shared/assets/icons/humidity.svg'
+import Level from 'shared/assets/icons/level-slider.svg'
+import Sunrise from 'shared/assets/icons/sunrise.svg'
+import {tempt} from 'shared/libs/convertData/convertData';
+import {useStore} from 'store/store';
 
 
 export const enum Title {

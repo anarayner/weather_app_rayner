@@ -1,15 +1,15 @@
 import React, {useEffect} from 'react'
 import {observer} from 'mobx-react-lite';
-import {useStore} from '../../../store/store';
+import {useStore} from 'store/store';
 import {TopLeft} from '../components/TopLeft/TopLeft';
 import {BottomLeft} from '../components/BottomLeft/BottomLeft';
 import {BottomRight} from '../components/BottomRight/BottomRight';
 import {TopRight} from '../components/TopRight/TopRight';
-import {Loader} from '../../../shared/ui/Loader/Loader';
-import '../../../app/styles/index.scss'
+import {Loader} from 'shared/ui/Loader/Loader';
+import 'app/styles/index.scss'
 import cls from '../../AboutPage/ui/del.module.scss';
-import {getSearchCity} from '../../../shared/libs/helpers/getData';
-import {useGeoLocation} from '../../../shared/libs/hooks/useGeolocation'
+import {getSearchCity} from 'shared/libs/helpers/getData';
+import {useGeoLocation} from 'shared/libs/hooks/useGeolocation'
 
 const MainPage = observer(() => {
 

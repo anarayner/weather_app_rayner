@@ -1,4 +1,4 @@
-import {List, Rain, SearchHistory} from '../../../store/types/types';
+import {List, Rain, SearchHistory} from 'store/types/types';
 
 export const getWeekWeather = (data: List[]): List[] => {
     const week: List[] = []

@@ -2,9 +2,9 @@ import React, {
     memo, Suspense, useCallback,
 } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import {Loader} from '../../../../shared/ui/Loader/Loader';
+import {Loader} from 'shared/ui/Loader/Loader';
 import {AppRouteSProps, routeConfig} from '../config/routeConfig';
-import '../../../styles/index.scss'
+import 'app/styles/index.scss'
 
 
 const AppRouter = () => {

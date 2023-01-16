@@ -1,6 +1,6 @@
 import cls from './WeatherDescCard.module.scss'
-import {classNames} from '../../shared/libs/classNames/classNames';
-import {Card, Padding} from '../../shared/ui/Card/Card';
+import {classNames} from 'shared/libs/classNames/classNames';
+import {Card, Padding} from 'shared/ui/Card/Card';
 import {observer} from 'mobx-react-lite';
 
 

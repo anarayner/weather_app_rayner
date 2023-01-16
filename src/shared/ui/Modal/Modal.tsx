@@ -1,6 +1,6 @@
 import cls from './Modal.module.scss'
 import React, {memo, ReactNode} from 'react';
-import {classNames} from '../../libs/classNames/classNames';
+import {classNames} from 'shared/libs/classNames/classNames';
 import {Portal} from '../Portal/Portal';
 
 

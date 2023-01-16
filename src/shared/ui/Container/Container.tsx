@@ -1,6 +1,6 @@
 import cls from './Container.module.scss'
 import {memo, ReactNode} from 'react';
-import {classNames} from '../../libs/classNames/classNames';
+import {classNames} from 'shared/libs/classNames/classNames';
 
 
 interface ContainerProps {

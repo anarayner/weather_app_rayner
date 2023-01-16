@@ -1,6 +1,6 @@
 import { HTMLAttributes, memo, ReactNode } from 'react';
 import cls from './Card.module.scss';
-import {classNames} from '../../libs/classNames/classNames';
+import {classNames} from 'shared/libs/classNames/classNames';
 
 export enum CardTheme {
     NORMAL = 'normal',

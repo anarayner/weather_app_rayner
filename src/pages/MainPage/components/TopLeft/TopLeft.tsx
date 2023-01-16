@@ -1,16 +1,16 @@
 import cls from './TopLeft.module.scss'
 import {memo, useCallback, useState} from 'react';
-import {classNames} from '../../../../shared/libs/classNames/classNames';
-import {Clock, ClockSize} from '../../../../shared/ui/Clock/Clock';
-import {Button} from '../../../../shared/ui/Button';
-import {ButtonSize, ButtonTheme} from '../../../../shared/ui/Button/Button';
-import {CurrentDayCard} from '../../../../features/CurrentDayCard/CurrentDayCard';
-import {WeekDayCard} from '../../../../features/WeekDayCard/WeekDayCard';
-import {City, List} from '../../../../store/types/types';
-import {WeekDayDescCard} from '../../../../features/WeekDayDescCard/WeekDayDescCard';
-import {Modal} from '../../../../shared/ui/Modal/Modal';
+import {classNames} from 'shared/libs/classNames/classNames';
+import {Clock, ClockSize} from 'shared/ui/Clock/Clock';
+import {Button} from 'shared/ui/Button';
+import {ButtonSize, ButtonTheme} from 'shared/ui/Button/Button';
+import {CurrentDayCard} from 'features/CurrentDayCard/CurrentDayCard';
+import {WeekDayCard} from 'features/WeekDayCard/WeekDayCard';
+import {City, List} from 'store/types/types';
+import {WeekDayDescCard} from 'features/WeekDayDescCard/WeekDayDescCard';
+import {Modal} from 'shared/ui/Modal/Modal';
 import {observer} from 'mobx-react-lite';
-import {useStore} from '../../../../store/store';
+import {useStore} from 'store/store';
 
 
 interface TopLeftProps {
@@ -39,7 +39,7 @@ export const TopLeft = observer((props: TopLeftProps) => {
 
     const close = useCallback(()=> setIsOpened(false), []);
     const [degreeBtn, setDegreeBth] = useState(degree)
-
+    const degreeBtnSnow = degreeBtn == 'F'? 'C' : 'F'
     const onClickHandler = useCallback(() => {
         degree =='F'? setDegreeBth('C') : setDegreeBth('F')
         valueStore.changeDegree(degreeBtn)
@@ -49,7 +49,7 @@ export const TopLeft = observer((props: TopLeftProps) => {
         <div className={classNames('', {}, [className])}>
             <div className={cls.date}>
                 <Clock size={ClockSize.L}/>
-                <Button size={ButtonSize.S} className={cls.btn} onClick={onClickHandler}>{ degreeBtn }°</Button>
+                <Button size={ButtonSize.S} className={cls.btn} onClick={onClickHandler}>{ degreeBtnSnow }°</Button>
             </div>
             <div className={cls.weather_container}>
                 <CurrentDayCard today={today} city={city}/>

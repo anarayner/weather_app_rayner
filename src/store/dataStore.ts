@@ -1,7 +1,7 @@
 import {makeAutoObservable} from 'mobx'
 import {AllWeather, City, List, Rain} from './types/types';
-import {fetchAllWeather, fetchAllWeatherByGeo} from '../services/currentWeather';
-import {getHourlyTodayWeather, getWeekWeather} from '../shared/libs/helpers/getData';
+import {fetchAllWeather, fetchAllWeatherByGeo} from 'services/currentWeather';
+import {getHourlyTodayWeather, getWeekWeather} from 'shared/libs/helpers/getData';
 
 
 class DataStore {

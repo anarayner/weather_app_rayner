@@ -1,9 +1,9 @@
 import cls from './Navbar.module.scss'
-import {classNames} from '../../shared/libs/classNames/classNames';
-import {Input} from '../../shared/ui/Input/Input';
-import LocationIcon from '../../shared/assets/icons/location.svg'
+import {classNames} from 'shared/libs/classNames/classNames';
+import {Input} from 'shared/ui/Input/Input';
+import LocationIcon from 'shared/assets/icons/location.svg'
 import {observer} from 'mobx-react-lite';
-import {useStore} from '../../store/store';
+import {useStore} from 'store/store';
 import React, {useState} from 'react';
 
 interface NavbarProps {

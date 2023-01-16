@@ -1,6 +1,6 @@
 import cls from './Switcher.module.scss'
 import {memo} from 'react';
-import {classNames} from '../../libs/classNames/classNames';
+import {classNames} from 'shared/libs/classNames/classNames';
 
 
 interface SwitcherProps {

@@ -1,10 +1,10 @@
 import cls from './TopRight.module.scss'
 import {memo} from 'react';
-import {classNames} from '../../../../shared/libs/classNames/classNames';
-import {Progress} from '../../../../shared/ui/Progress/Progress';
-import {List, Rain} from '../../../../store/types/types';
+import {classNames} from 'shared/libs/classNames/classNames';
+import {Progress} from 'shared/ui/Progress/Progress';
+import {List, Rain} from 'store/types/types';
 import {observer} from 'mobx-react-lite';
-import {formatAMPM, formatDay} from '../../../../shared/libs/convertData/convertData';
+import {formatAMPM, formatDay} from 'shared/libs/convertData/convertData';
 
 
 interface TopRightProps {

@@ -1,17 +1,11 @@
 import cls from './WeekDayCard.module.scss'
-import {classNames} from '../../shared/libs/classNames/classNames';
-import {useStore} from '../../store/store';
-import {Card, Padding} from '../../shared/ui/Card/Card';
-import WeatherIcon from '../../shared/assets/icons/coudy.svg'
+import {classNames} from 'shared/libs/classNames/classNames';
+import {useStore} from 'store/store';
+import WeatherIcon from 'shared/assets/icons/coudy.svg'
 import {observer} from 'mobx-react-lite';
-import {Loader} from '../../shared/ui/Loader/Loader';
-import {CurrentWeather, Main} from '../../store/types/types';
-import {Button} from '../../shared/ui/Button';
-import {ButtonTheme} from '../../shared/ui/Button/Button';
-import {WeekDayDescCard} from '../WeekDayDescCard/WeekDayDescCard';
-import {Modal} from '../../shared/ui/Modal/Modal';
-import {useState} from 'react';
-import {formatAMPM, formatDay, formatTime, tempt} from '../../shared/libs/convertData/convertData';
+import {Loader} from 'shared/ui/Loader/Loader';
+import {Main} from 'store/types/types';
+import {formatAMPM, formatDay, tempt} from 'shared/libs/convertData/convertData';
 
 
 interface WeekDayCardProps {

@@ -1,11 +1,10 @@
 import cls from './ButtomRight.module.scss'
 import {memo} from 'react';
-import {classNames} from '../../../../shared/libs/classNames/classNames';
-import {Button} from '../../../../shared/ui/Button';
-import {ButtonSize} from '../../../../shared/ui/Button/Button';
-import {OtherCitiesCard} from '../../../../features/OtherCitiesCard/OtherCitiesCard';
-import {SearchHistory} from '../../../../store/types/types';
-import {WeekDayCard} from '../../../../features/WeekDayCard/WeekDayCard';
+import {classNames} from 'shared/libs/classNames/classNames';
+import {Button} from 'shared/ui/Button';
+import {ButtonSize} from 'shared/ui/Button/Button';
+import {OtherCitiesCard} from 'features/OtherCitiesCard/OtherCitiesCard';
+import {SearchHistory} from 'store/types/types';
 import {observer} from 'mobx-react-lite';
 
 

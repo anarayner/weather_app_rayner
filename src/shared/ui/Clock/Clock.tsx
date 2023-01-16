@@ -1,10 +1,9 @@
 import cls from './Clock.module.scss'
 import {memo, useEffect, useState} from 'react';
-import {classNames} from '../../libs/classNames/classNames';
-import dataStore from '../../../store/dataStore';
-import {formatAMPM, formatDayWithYear} from '../../libs/convertData/convertData';
+import {classNames} from 'shared/libs/classNames/classNames';
+import {formatAMPM, formatDayWithYear} from 'shared/libs/convertData/convertData';
 import {observer} from 'mobx-react-lite';
-import {useStore} from '../../../store/store';
+import {useStore} from 'store/store';
 
 export const enum ClockSize {
     S = 'size_s',

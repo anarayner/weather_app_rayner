@@ -19,7 +19,8 @@ module.exports = {
     },
     plugins: [
         'react',
-        '@typescript-eslint'
+        '@typescript-eslint',
+        'react-hooks'
     ],
     root: true,
     rules: {
@@ -40,9 +41,17 @@ module.exports = {
         'import/extensions': 'off',
         'import/no-extraneous-dependencies': 'off',
         '@typescript-eslint/ban-ts-comment': 'off',
-        "react/display-name": "off",
-        // 'react-hooks/rules-of-hooks': 'error', // Check rules of Hooks
-        // 'react-hooks/exhaustive-deps': 'error', // Checks effect dependencies
+        'react/display-name': 'off',
+        'react-hooks/rules-of-hooks': 'error', // Check rules of Hooks
+        'react-hooks/exhaustive-deps': 'error', // Checks effect dependencies
+        'key-spacing': ['error', { 'beforeColon': false, 'afterColon': true}],
+        'react/jsx-curly-spacing': ['warn', {
+            'when': 'never',
+            'children': {
+                'when': 'always'
+            },
+        }],
+        'quotes': [2, 'single', { 'avoidEscape': true }]
     },
     globals: {
         __IS_DEV__: true

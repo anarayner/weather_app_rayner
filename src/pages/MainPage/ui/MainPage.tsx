@@ -1,14 +1,14 @@
 import React, {useEffect} from 'react'
-import {observer} from "mobx-react-lite";
-import {useStore} from "../../../store/store";
-import {TopLeft} from "../components/TopLeft/TopLeft";
-import {BottomLeft} from "../components/BottomLeft/BottomLeft";
-import {BottomRight} from "../components/BottomRight/BottomRight";
-import {TopRight} from "../components/TopRight/TopRight";
-import {Loader} from "../../../shared/ui/Loader/Loader";
+import {observer} from 'mobx-react-lite';
+import {useStore} from '../../../store/store';
+import {TopLeft} from '../components/TopLeft/TopLeft';
+import {BottomLeft} from '../components/BottomLeft/BottomLeft';
+import {BottomRight} from '../components/BottomRight/BottomRight';
+import {TopRight} from '../components/TopRight/TopRight';
+import {Loader} from '../../../shared/ui/Loader/Loader';
 import '../../../app/styles/index.scss'
-import cls from "../../AboutPage/ui/del.module.scss";
-import {getSearchCity} from "../../../shared/libs/helpers/getData";
+import cls from '../../AboutPage/ui/del.module.scss';
+import {getSearchCity} from '../../../shared/libs/helpers/getData';
 
 const MainPage = observer(() => {
 
@@ -30,14 +30,14 @@ const MainPage = observer(() => {
 
     const searchObject =  getSearchCity(today, city?.name, currentLocation)
 
-    const searchHistory = JSON.parse(localStorage.getItem("searchHistory") || "[]");
+    const searchHistory = JSON.parse(localStorage.getItem('searchHistory') || '[]');
     console.log('searchHistory',searchHistory)
-    const hasSearch = searchHistory.some((d:any) => d.city == searchObject?.city)
-    console.log("hasSearch", hasSearch)
+    const hasSearch = searchHistory.some((d:any) => d?.city == searchObject?.city)
+    console.log('hasSearch', hasSearch)
 
     if(searchObject && !hasSearch){
         searchHistory.unshift(searchObject)
-        localStorage.setItem("searchHistory", JSON.stringify(searchHistory));
+        localStorage.setItem('searchHistory', JSON.stringify(searchHistory));
     }
 
 

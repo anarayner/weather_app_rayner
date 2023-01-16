@@ -1,5 +1,5 @@
-import {$api} from "../shared/api/api";
-import {API_KEY} from "../shared/consts/consts";
+import {$api} from '../shared/api/api';
+import {API_KEY} from '../shared/consts/consts';
 
 export const fetchCurrentWeatherByLocation = async (location: string)=>{
     const {data} = await $api.get(`weather?q=${location}&appid=${API_KEY}`)

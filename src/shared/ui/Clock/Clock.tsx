@@ -1,10 +1,10 @@
 import cls from './Clock.module.scss'
 import {memo, useEffect, useState} from 'react';
-import {classNames} from "../../libs/classNames/classNames";
-import dataStore from "../../../store/dataStore";
-import {formatAMPM, formatDayWithYear} from "../../libs/convertData/convertData";
-import {observer} from "mobx-react-lite";
-import {useStore} from "../../../store/store";
+import {classNames} from '../../libs/classNames/classNames';
+import dataStore from '../../../store/dataStore';
+import {formatAMPM, formatDayWithYear} from '../../libs/convertData/convertData';
+import {observer} from 'mobx-react-lite';
+import {useStore} from '../../../store/store';
 
 export const enum ClockSize {
     S = 'size_s',
@@ -32,9 +32,9 @@ export const Clock = observer(({className, size}: ClockProps) => {
     const city = dataStore.city
     return (
         <div className={classNames(cls.Clock, {}, [className, cls[size]])}>
-            <p>Today in {city?.name}</p>
-            <p className={cls.day}>{day}</p>
-            <p className={cls.time}>{time}</p>
+            <p>Today in { city?.name }</p>
+            <p className={cls.day}>{ day }</p>
+            <p className={cls.time}>{ time }</p>
         </div>
     );
 });

@@ -1,6 +1,6 @@
 import { HTMLAttributes, memo, ReactNode } from 'react';
 import cls from './Card.module.scss';
-import {classNames} from "../../libs/classNames/classNames";
+import {classNames} from '../../libs/classNames/classNames';
 
 export enum CardTheme {
     NORMAL = 'normal',
@@ -37,7 +37,7 @@ export const Card = memo((props: CardProps) => {
             className={classNames(cls.Card, { [cls.max]: max }, [className, cls[theme], cls[padding]])}
             {...otherProps}
         >
-            {children}
+            { children }
         </div>
     );
 });

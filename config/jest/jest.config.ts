@@ -27,7 +27,7 @@ export default {
 
     // An array of regexp pattern strings used to skip coverage collection
     coveragePathIgnorePatterns: [
-        "\\\\node_modules\\\\"
+        '\\\\node_modules\\\\'
     ],
 
     // Indicates which provider should be used to instrument code for coverage
@@ -146,7 +146,7 @@ export default {
     // snapshotSerializers: [],
 
     // The test environment that will be used for testing
-    testEnvironment: "jsdom",
+    testEnvironment: 'jsdom',
 
     // Options that will be passed to the testEnvironment
     // testEnvironmentOptions: {},

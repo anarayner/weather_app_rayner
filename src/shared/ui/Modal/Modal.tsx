@@ -1,6 +1,7 @@
 import cls from './Modal.module.scss'
 import React, {memo, ReactNode} from 'react';
-import {classNames} from "../../libs/classNames/classNames";
+import {classNames} from '../../libs/classNames/classNames';
+import {Portal} from '../Portal/Portal';
 
 
 interface ModalProps {
@@ -32,12 +33,15 @@ export const Modal = memo((props: ModalProps) => {
         [cls.opened]: isOpen
     }
     return (
-        <div className={classNames(cls.Modal, mods, [className])}>
-            <div className={cls.overlay} onClick={closeHandler}>
-                <div className={cls.content} onClick={onContentClick}>
-                    {children}
+        <Portal>
+            <div className={classNames(cls.Modal, mods, [className])}>
+                <div className={cls.overlay} onClick={closeHandler}>
+                    <div className={cls.content} onClick={onContentClick}>
+                        { children }
+                    </div>
                 </div>
             </div>
-        </div>
+        </Portal>
+
     );
 });

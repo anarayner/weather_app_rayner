@@ -1,9 +1,9 @@
-import {makeAutoObservable} from "mobx"
-import {AllWeather, City, List, Rain, SearchHistory} from "./types/types";
-import axios from "axios";
-import {API_KEY} from "../shared/consts/consts";
-import {fetchAllWeather} from "../services/currentWeather";
-import {getHourlyTodayWeather, getRainChance, getSearchCity, getWeekWeather} from "../shared/libs/helpers/getData";
+import {makeAutoObservable} from 'mobx'
+import {AllWeather, City, List, Rain, SearchHistory} from './types/types';
+import axios from 'axios';
+import {API_KEY} from '../shared/consts/consts';
+import {fetchAllWeather} from '../services/currentWeather';
+import {getHourlyTodayWeather, getRainChance, getSearchCity, getWeekWeather} from '../shared/libs/helpers/getData';
 
 
 class DataStore {

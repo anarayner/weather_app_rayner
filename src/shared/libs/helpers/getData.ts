@@ -1,4 +1,4 @@
-import {List, Rain, SearchHistory} from "../../../store/types/types";
+import {List, Rain, SearchHistory} from '../../../store/types/types';
 
 export const getWeekWeather = (data: List[]): List[] => {
     const week: List[] = []
@@ -15,9 +15,9 @@ export const getRainChance = (data: List[]): Rain[] => {
     data.map((d: List, index: number) => {
         if (rainChance.length == 7) return
         const obj: Rain = {} as Rain
-        if (d?.rain?.["3h"]) {
+        if (d?.rain?.['3h']) {
             obj.date = d.dt_txt
-            obj.rainChance = d.rain["3h"]
+            obj.rainChance = d.rain['3h']
             rainChance.push(obj)
         }
     })

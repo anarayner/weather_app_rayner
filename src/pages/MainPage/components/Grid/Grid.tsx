@@ -1,7 +1,7 @@
 import cls from './Grid.module.scss'
 import {memo, ReactNode} from 'react';
-import {classNames} from "../../../../shared/libs/classNames/classNames";
-import {Container} from "../../../../shared/ui/Container/Container";
+import {classNames} from '../../../../shared/libs/classNames/classNames';
+import {Container} from '../../../../shared/ui/Container/Container';
 
 export const enum ContainerGridTheme {
     R2C2  = 'grid_2_1'
@@ -20,16 +20,16 @@ export const Grid = memo(({className, grid, top_left, top_right, bottom_left, bo
     return (
         <Container className={classNames(cls.Grid, {}, [className, cls[grid]])}>
             <div className={cls.div1}>
-                {top_left}
+                { top_left }
             </div>
             <div className={cls.div2}>
-                {top_right}
+                { top_right }
             </div>
             <div className={cls.div3}>
-                {bottom_left}
+                { bottom_left }
             </div>
             <div className={cls.div4}>
-                {bottom_right}
+                { bottom_right }
             </div>
         </Container>
     );

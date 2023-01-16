@@ -1,4 +1,4 @@
-const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+const days = ['Saturday', 'Sunday','Monday','Tuesday','Wednesday','Thursday','Friday'];
 
 export const tempt = (temp: number, degree: string) => {
     const x = temp - 273.15

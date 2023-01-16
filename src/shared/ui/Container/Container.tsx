@@ -1,6 +1,6 @@
 import cls from './Container.module.scss'
 import {memo, ReactNode} from 'react';
-import {classNames} from "../../libs/classNames/classNames";
+import {classNames} from '../../libs/classNames/classNames';
 
 
 interface ContainerProps {
@@ -11,7 +11,7 @@ interface ContainerProps {
 export const Container = memo(({className, children}: ContainerProps) => {
     return (
         <div className={classNames(cls.Container, {}, [className])}>
-            {children}
+            { children }
         </div>
     );
 });

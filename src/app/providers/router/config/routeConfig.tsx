@@ -1,8 +1,8 @@
 import { RouteProps } from 'react-router-dom';
-import {MainPage} from "../../../../pages/MainPage";
-import {NotFoundPage} from "../../../../pages/NotFoundPage";
-import {AboutPage} from "../../../../pages/AboutPage";
-import {MapPage} from "../../../../pages/MapPage";
+import {MainPage} from '../../../../pages/MainPage';
+import {NotFoundPage} from '../../../../pages/NotFoundPage';
+import {AboutPage} from '../../../../pages/AboutPage';
+import {MapPage} from '../../../../pages/MapPage';
 
 
 export type AppRouteSProps = RouteProps

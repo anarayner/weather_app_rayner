@@ -1,6 +1,6 @@
 import cls from './Progress.module.scss'
 import {memo} from 'react';
-import {classNames} from "../../libs/classNames/classNames";
+import {classNames} from '../../libs/classNames/classNames';
 
 
 interface ProgressProps {
@@ -19,9 +19,9 @@ export const Progress = memo((props: ProgressProps) => {
 
     return (
         <div className={classNames(cls.Progress, {}, [className])}>
-            <span>{day}</span>
+            <span>{ day }</span>
             <progress value={value/100} className={cls.progress} />
-            <span className={cls.pros}>{value}%</span>
+            <span className={cls.pros}>{ value }%</span>
         </div>
     );
 });

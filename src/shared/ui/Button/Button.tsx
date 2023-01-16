@@ -1,6 +1,6 @@
 import { ButtonHTMLAttributes, memo, ReactNode } from 'react'
 import cls from './Button.module.scss'
-import {classNames, Mods} from "../../libs/classNames/classNames";
+import {classNames, Mods} from '../../libs/classNames/classNames';
 
 export const enum ButtonTheme {
     CLEAR = 'clear',
@@ -53,7 +53,7 @@ export const Button = memo((props: ButtonProps) => {
             disabled={disabled}
             {...otherProps}
         >
-            {children}
+            { children }
         </button>
     )
 })

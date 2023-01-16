@@ -1,8 +1,8 @@
 import cls from './BottomLeft.module.scss'
-import {classNames} from "../../../../shared/libs/classNames/classNames";
-import {WeatherDescCard} from "../../../../features/WeatherDescCard/WeatherDescCard";
-import {observer} from "mobx-react-lite";
-import {City, List} from "../../../../store/types/types";
+import {classNames} from '../../../../shared/libs/classNames/classNames';
+import {WeatherDescCard} from '../../../../features/WeatherDescCard/WeatherDescCard';
+import {observer} from 'mobx-react-lite';
+import {City, List} from '../../../../store/types/types';
 import FeelLike from '../../../../shared/assets/icons/temperature.svg'
 import WindSpeed from '../../../../shared/assets/icons/wind.svg'
 import WindDir from '../../../../shared/assets/icons/wind-ne.svg'
@@ -12,7 +12,7 @@ import Pressure from '../../../../shared/assets/icons/pressure.svg'
 import Humidity from '../../../../shared/assets/icons/humidity.svg'
 import Level from '../../../../shared/assets/icons/level-slider.svg'
 import Sunrise from '../../../../shared/assets/icons/sunrise.svg'
-import {tempt} from "../../../../shared/libs/convertData/convertData";
+import {tempt} from '../../../../shared/libs/convertData/convertData';
 
 
 export const enum Title {
@@ -46,7 +46,6 @@ export const BottomLeft = observer((props: BottomLeftProps) => {
     return (
         <div className={classNames(cls.BottomLeft, {}, [className])}>
             <div className={cls.card_grid}>
-                {/*<p className={cls.title}>Today overview</p>*/}
                 <div className={cls.div1}>
                     <WeatherDescCard title={Title.FEELS_LIKE}
                         icon={<FeelLike/>}
@@ -78,7 +77,7 @@ export const BottomLeft = observer((props: BottomLeftProps) => {
                     <WeatherDescCard
                         title={Title.CLOUD}
                         icon={<Cloud/>}
-                        value={today?.clouds?.all+" %"}
+                        value={today?.clouds?.all+' %'}
                     />
                 </div>
                 <div className={cls.div6}>

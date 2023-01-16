@@ -1,10 +1,10 @@
 import React, { Suspense } from 'react'
 import './app/styles/index.scss'
-import {useTheme} from "./app/providers/theme/useTheme";
-import {Sidebar} from "./widgets/Sidebar/Sidebar";
-import {Navbar} from "./widgets/Navbar/Navbar";
-import {Loader} from "./shared/ui/Loader/Loader";
-import {AppRouter} from "./app/providers/router";
+import {useTheme} from './app/providers/theme/useTheme';
+import {Sidebar} from './widgets/Sidebar/Sidebar';
+import {Navbar} from './widgets/Navbar/Navbar';
+import {Loader} from './shared/ui/Loader/Loader';
+import {AppRouter} from './app/providers/router';
 
 
 const App = () => {

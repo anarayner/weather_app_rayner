@@ -1,0 +1,49 @@
+.wrapper {
+  padding-left: 30px;
+}
+
+.wrapper_mobile{
+  padding-left: 60px;
+  width: 100%;
+  overflow-y: auto;
+}
+
+.top {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.bottom {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
+}
+
+.d1 {
+  height: var(--top-container-height);
+  flex: 1;
+  overflow-x: auto;
+}
+
+.d1_m {
+  height: 100%;
+}
+
+.d2 {
+  width: 350px;
+}
+
+.d2_m {
+  height: 100%;
+  width: 100%;
+}
+
+.d3 {
+  flex: 1;
+}
+
+.d4 {
+  width: 350px;
+}

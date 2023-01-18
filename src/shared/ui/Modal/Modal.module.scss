@@ -7,6 +7,9 @@
   z-index: -1;
   opacity: 0;
   pointer-events: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .overlay{
@@ -21,6 +24,7 @@
   padding: 20px;
   border-radius: 30px;
   background: var(--bg-color-inverted);
+  z-index: var(--modal-z-index);
 
   transition: 0.3s transform;
   transform: scale(0.5);
@@ -32,15 +36,22 @@
   border-radius: 30px;
   background: var(--bg-color-inverted);
   max-width: 90%;
+  z-index: var(--modal-z-index);
 }
 
 .opened {
   pointer-events: auto;
   opacity: 1;
-  z-index: 10000;
+  z-index: var(--modal-z-index);
 
   .content {
     transform: scale(1);
   }
 
+}
+
+.isClosing {
+  .content{
+    transform: scale(0.2);
+  }
 }

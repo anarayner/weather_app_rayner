@@ -9,10 +9,8 @@ export interface IStore {
 }
 export const store: IStore = {
     dataStore: new DataStore(),
-    valueStore: new ValueStore()
+    valueStore: new ValueStore(),
 
 };
 export const StoreContext = createContext(store);
-export const useStore = () => {
-    return useContext(StoreContext);
-};
+export const useStore = () => useContext(StoreContext);

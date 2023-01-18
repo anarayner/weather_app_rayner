@@ -1,18 +1,25 @@
 module.exports = {
     env: {
         browser: true,
-        es2021: true
+        es2021: true,
+        jest: true,
+    },
+    settings: {
+        react: {
+            version: 'detect',
+        },
     },
     extends: [
+        'airbnb',
         'plugin:react/recommended',
-        'plugin:@typescript-eslint/recommended'
+        'plugin:react-hooks/recommended',
     ],
     overrides: [
     ],
     parser: '@typescript-eslint/parser',
     parserOptions: {
         ecmaFeatures: {
-            jsx: true
+            jsx: true,
         },
         ecmaVersion: 'latest',
         sourceType: 'module',
@@ -20,7 +27,7 @@ module.exports = {
     plugins: [
         'react',
         '@typescript-eslint',
-        'react-hooks'
+        'react-hooks',
     ],
     root: true,
     rules: {
@@ -42,18 +49,25 @@ module.exports = {
         'import/no-extraneous-dependencies': 'off',
         '@typescript-eslint/ban-ts-comment': 'off',
         'react/display-name': 'off',
+        'jsx-a11y/no-static-element-interactions': 'off',
+        'jsx-a11y/click-events-have-key-events': 'off',
+        'no-underscore-dangle': 'off',
+        'max-len': 'off',
+        'array-callback-return': 'off',
         'react-hooks/rules-of-hooks': 'error', // Check rules of Hooks
-        'react-hooks/exhaustive-deps': 'error', // Checks effect dependencies
-        'key-spacing': ['error', { 'beforeColon': false, 'afterColon': true}],
+        'react-hooks/exhaustive-deps': ['error', {
+            additionalHooks: '(useGeolocation)',
+        }], // Checks effect dependencies
+        'key-spacing': ['error', { beforeColon: false, afterColon: true }],
         'react/jsx-curly-spacing': ['warn', {
-            'when': 'never',
-            'children': {
-                'when': 'always'
+            when: 'never',
+            children: {
+                when: 'always',
             },
         }],
-        'quotes': [2, 'single', { 'avoidEscape': true }]
+        quotes: [2, 'single', { avoidEscape: true }],
     },
     globals: {
-        __IS_DEV__: true
-    }
-}
+        __IS_DEV__: true,
+    },
+};

@@ -1,18 +1,17 @@
-import cls from './OtherCitiesCard.module.scss'
-import {classNames} from 'shared/libs/classNames/classNames';
-import {Card, Padding} from 'shared/ui/Card/Card';
-import WeatherIcon from 'shared/assets/icons/coudy_small.svg'
-import {observer} from 'mobx-react-lite';
-import {tempt} from 'shared/libs/convertData/convertData';
-import {Button, ButtonTheme} from 'shared/ui/Button/Button';
-import {useStore} from 'store/store';
-
+import { classNames } from 'shared/libs/classNames/classNames';
+import { Card, Padding } from 'shared/ui/Card/Card';
+import WeatherIcon from 'shared/assets/icons/coudy_small.svg';
+import { observer } from 'mobx-react-lite';
+import { tempt } from 'shared/libs/convertData/convertData';
+import { Button, ButtonTheme } from 'shared/ui/Button/Button';
+import { useStore } from 'store/store';
+import cls from './OtherCitiesCard.module.scss';
 
 interface OtherCitiesCardProps {
     className?: string;
     name?: string;
     temp?: number;
-    weather?: string
+    weather?: string;
 }
 
 export const OtherCitiesCard = observer((props: OtherCitiesCardProps) => {
@@ -20,25 +19,28 @@ export const OtherCitiesCard = observer((props: OtherCitiesCardProps) => {
         className,
         name,
         weather,
-        temp
-    } = props
+        temp,
+    } = props;
     const { dataStore } = useStore();
 
     const clickHandler = (name: string) => {
-        dataStore.fetchCurrentWeather(name)
-    }
+        dataStore.fetchCurrentWeather(name);
+    };
 
     return (
         <div className={classNames('', {}, [className])}>
-            <Button theme={ButtonTheme.CLEAR} className={cls.CurrentDay} onClick={()=> clickHandler(name)}>
+            <Button theme={ButtonTheme.CLEAR} className={cls.CurrentDay} onClick={() => clickHandler(name)}>
                 <Card padding={Padding.NONE}>
                     <div className={cls.top}>
                         <p>{ name }</p>
-                        <div className={cls.icon}>{ <WeatherIcon/> }</div>
+                        <div className={cls.icon}><WeatherIcon /></div>
                     </div>
                     <div className={cls.bottom}>
                         <p>{ weather }</p>
-                        <span>{ Math.floor(tempt(temp, 'F')) }°F</span>
+                        <span>
+                            { Math.floor(tempt(temp, 'F')) }
+                            °F
+                        </span>
                     </div>
                 </Card>
             </Button>

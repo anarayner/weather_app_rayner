@@ -1,29 +1,26 @@
-import {makeAutoObservable} from 'mobx';
+import { makeAutoObservable } from 'mobx';
 
 class ValueStore {
-
-    _degree = 'F'
+    _degree = 'F';
 
     constructor() {
-        makeAutoObservable(this)
+        makeAutoObservable(this);
     }
 
-
-    setDegree(degree: string){
-        this._degree = degree
+    setDegree(degree: string) {
+        this._degree = degree;
     }
 
-    get degree(){
-        return this._degree
+    get degree() {
+        return this._degree;
     }
 
-
-    changeDegree(degree: string){
-        try{
-            if(degree == 'F') this.setDegree('C')
-            if(degree == 'C') this.setDegree('F')
-        }catch (e) {
-            console.log(e)
+    changeDegree(degree: string) {
+        try {
+            if (degree === 'F') this.setDegree('C');
+            if (degree === 'C') this.setDegree('F');
+        } catch (e) {
+            console.log(e);
         }
     }
 }

@@ -1,35 +1,20 @@
-import cls from './ButtomRight.module.scss'
-import {memo} from 'react';
-import {classNames} from 'shared/libs/classNames/classNames';
-import {Button, ButtonSize} from 'shared/ui/Button/Button';
-import {OtherCitiesCard} from 'features/OtherCitiesCard/OtherCitiesCard';
-import {SearchHistory} from 'store/types/types';
-import {observer} from 'mobx-react-lite';
-
+import { memo } from 'react';
+import { classNames } from 'shared/libs/classNames/classNames';
+import { observer } from 'mobx-react-lite';
+import { SearchHistory } from 'features/SearchHistory/SearchHistory';
+import cls from './ButtomRight.module.scss';
 
 interface BottomRightProps {
     className?: string;
-    searchHistory?: SearchHistory[]
 }
 
-export const BottomRight = observer(({className, searchHistory}: BottomRightProps) => {
-
-    return (
-        <div className={classNames(cls.BottomRight, {}, [className])}>
-            <div className={cls.container}>
-                <div className={cls.button_container}>
-                    <p className={cls.title}>Search History</p>
-                    { /*<Button size={ButtonSize.S} className={cls.btn}>Other cities</Button>*/ }
-                </div>
-                { /*<div className={cls.cards_cont}>*/ }
-                { /*    <OtherCitiesCard/>*/ }
-                { /*</div>*/ }
-                <div className={cls.cards_cont}>
-                    { searchHistory.map((city) =>
-                        <OtherCitiesCard key={city?.city} name={city?.city} temp={city?.temp} weather={city?.weather}/>
-                    ) }
-                </div>
+export const BottomRight = observer(({ className }: BottomRightProps) => (
+    <div className={classNames(cls.BottomRight, {}, [className])}>
+        <div className={cls.container}>
+            <div className={cls.button_container}>
+                <p className={cls.title}>Search History</p>
             </div>
+            <SearchHistory />
         </div>
-    );
-});
+    </div>
+));

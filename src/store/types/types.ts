@@ -49,7 +49,6 @@ export interface CurrentWeather {
     cod: number
 }
 
-
 export interface City {
     coord: CoordTypes,
     country: string,
@@ -107,9 +106,8 @@ export interface Rain {
     rainChance: number
 }
 
-export interface SearchHistory {
+export interface SearchedCity {
     city: string;
     temp: number;
     weather: string
 }
-

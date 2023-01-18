@@ -1,48 +1,61 @@
-import cls from './Modal.module.scss'
-import React, {memo, ReactNode} from 'react';
-import {classNames} from 'shared/libs/classNames/classNames';
-import {Portal} from '../Portal/Portal';
-import {isMobile} from 'react-device-detect';
-
+import React, {
+    memo, ReactNode, useCallback, useEffect, useRef, useState,
+} from 'react';
+import { classNames } from 'shared/libs/classNames/classNames';
+import { isMobile } from 'react-device-detect';
+import { Overlay } from 'shared/ui/Overlay/Overlay';
+import { useModal } from 'shared/libs/hooks/useModal';
+import { Portal } from '../Portal/Portal';
+import cls from './Modal.module.scss';
 
 interface ModalProps {
     className?: string;
     children?: ReactNode;
     isOpen?: boolean;
     onClose?: () => void;
+    lazy?: boolean;
 }
 
-export const Modal = memo((props: ModalProps) => {
+const ANIMATION_DELAY = 200;
+
+export const Modal = (props: ModalProps) => {
     const {
         className,
         children,
         isOpen,
-        onClose
-    } = props
+        onClose,
+        lazy,
+    } = props;
 
-    const closeHandler = () => {
-        if(onClose){
-            onClose()
-        }
-    }
-
-    const onContentClick = (e: React.MouseEvent) => {
-        e.stopPropagation()
-    }
+    const {
+        isClosing,
+        close,
+    } = useModal(
+        {
+            isOpen,
+            onClose,
+            animationDelay: ANIMATION_DELAY,
+        },
+    );
 
     const mods: Record<string, boolean> = {
-        [cls.opened]: isOpen
-    }
+        [cls.opened]: isOpen,
+        [cls.isClosing]: isClosing,
+    };
+    // if (lazy && !isMounted) {
+    //     return null;
+    // }
     return (
         <Portal>
             <div className={classNames(cls.Modal, mods, [className])}>
-                <div className={cls.overlay} onClick={closeHandler}>
-                    <div className={isMobile? cls.content_m : cls.content} onClick={onContentClick}>
-                        { children }
-                    </div>
+                <Overlay onClick={close} />
+                <div
+                    className={isMobile ? cls.content_m : cls.content}
+                >
+                    { children }
                 </div>
             </div>
         </Portal>
 
     );
-});
+};

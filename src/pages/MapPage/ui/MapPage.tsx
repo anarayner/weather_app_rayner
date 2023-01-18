@@ -1,12 +1,9 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react';
 
-const MapPage = () => {
+const MapPage = () => (
+    <div className="" id="fullheight">
+        Comming soon..
+    </div>
+);
 
-    return (
-        <div className={''} id="fullheight">
-            Comming soon..
-        </div>
-    )
-}
-
-export default MapPage
+export default MapPage;

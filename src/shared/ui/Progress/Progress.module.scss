@@ -5,13 +5,9 @@
   align-items: center;
   font-size: 14px;
 
-  .pros {
-    margin-right: 15px;
-  }
-
   span {
     color: var(--primary-color);
-    width: 70px;
+    width: 115px;
   }
 }
 
@@ -23,7 +19,7 @@ progress {
 
 progress[value] {
   height: 18px;
-  width: 180px;
+  width: 230px;
   border-radius: 0 20px 20px 0;
 }
 

@@ -6,7 +6,6 @@
 
 .date_m{
   display: inline-block;
-  padding: 0 10px 15px 0;
   width: 100%;
 }
 
@@ -41,4 +40,11 @@
 .days_m{
   display: inline-block;
   width: 100%;
+  margin-top: 10px;
+}
+
+.cards_cont {
+  overflow-y: scroll;
+  //height: 380px;
+  //padding-right: 15px;
 }

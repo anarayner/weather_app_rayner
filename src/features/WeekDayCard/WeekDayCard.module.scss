@@ -5,6 +5,11 @@
   height: 270px;
   color: var(--primary-color);
   transition: all .2s ease-in-out;
+
+  .time {
+    font-size: 16px;
+  }
+
 }
 .WeekDayCard:hover { transform: scale(1.1); }
 
@@ -13,10 +18,18 @@
   background: var(--bg-color-inverted);
   margin-right: 7px;
   border-radius: 30px;
-  max-width: 120px;
+  width: 95px;
   height: 150px;
   color: var(--primary-color);
   transition: all .2s ease-in-out;
+
+  .time {
+    font-size: 13px;
+  }
+
+  .date {
+    font-size: 14px;
+  }
 }
 
 .top{
@@ -27,7 +40,7 @@
   justify-content: center;
   align-items: center;
   padding: 15px;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 300;
   height: 64px;
   color: var(--primary-color);
@@ -36,17 +49,15 @@
 .middle {
   display: flex;
   justify-content: space-between;
-  //padding: 20px 15px 0 15px;
   align-items: center;
-
 }
 
 .bottom {
-  padding: 0 15px;
   font-size: 14px;
   font-weight: 600;
   display: flex;
   justify-content: center;
+  align-items: center;
   margin-top: 20px;
 
   span{
@@ -56,6 +67,16 @@
   }
 }
 
-.time {
-  font-size: 16px;
+.bottom_m {
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  padding: 25px 22px;
+  span{
+    font-size: 30px;
+    font-weight: 500;
+    color: var(--primary-color);
+  }
 }
+

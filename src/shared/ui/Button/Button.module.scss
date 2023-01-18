@@ -27,19 +27,6 @@
     color: var(--primary-color);
 }
 
-.outline_red {
-    border: 1px solid var(--red-light);
-    background: none;
-    border-radius: 5px;
-    color: var(--red-light);
-}
-
-.background {
-    background: var(--bg-color);
-    color: var(--primary-color);
-    border: none;
-}
-
 .backgroundRound {
     background: var(--bg-color-secondary);
     color: var(--inverted-primary-color);
@@ -82,10 +69,6 @@
 
 .size_l {
     font: var(--font-l);
-}
-
-.size_xl {
-    font: var(--font-xl);
 }
 
 .disabled {

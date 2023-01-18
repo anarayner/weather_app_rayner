@@ -1,6 +1,6 @@
-import React, {InputHTMLAttributes, memo, useCallback} from 'react';
+import React, { InputHTMLAttributes, memo, useCallback } from 'react';
+import { classNames, Mods } from 'shared/libs/classNames/classNames';
 import cls from './Input.module.scss';
-import {classNames, Mods} from 'shared/libs/classNames/classNames';
 
 type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange'| 'readOnly'>
 
@@ -21,10 +21,9 @@ export const Input = memo((props: InputProps) => {
         ...otherProps
     } = props;
 
-    const onChangeHandler = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+    const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
         onChange?.(e.target.value);
-    },[onChange]);
-
+    };
 
     return (
         <div className={classNames(cls.Input, {}, [className])}>

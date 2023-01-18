@@ -1,0 +1,22 @@
+.DateInfo {
+}
+
+.date{
+  display: flex;
+  justify-content: space-between;
+  padding: 0 0 20px 0;
+}
+
+.date_m{
+  display: inline-block;
+  width: 100%;
+}
+
+.btn {
+  margin-right: 20px;
+}
+
+.btn_container {
+  display: flex;
+  justify-content: space-between;
+}

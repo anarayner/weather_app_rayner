@@ -1,7 +1,7 @@
 import { classNames } from 'shared/libs/classNames/classNames';
 import { Card, Padding } from 'shared/ui/Card/Card';
 import { observer } from 'mobx-react-lite';
-import cls from './WeatherDescCard.module.scss';
+import cls from './TodayInfoCard.module.scss';
 
 interface WeatherDescCardProps {
     className?: string;
@@ -10,7 +10,7 @@ interface WeatherDescCardProps {
     icon?: any;
 }
 
-export const WeatherDescCard = observer((props: WeatherDescCardProps) => {
+export const TodayInfoCard = observer((props: WeatherDescCardProps) => {
     const {
         className,
         title,

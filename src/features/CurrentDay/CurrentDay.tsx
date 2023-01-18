@@ -4,7 +4,7 @@ import { Card, Padding } from 'shared/ui/Card/Card';
 import WeatherIcon from 'shared/assets/icons/coudy.svg';
 import { observer } from 'mobx-react-lite';
 import {
-    formatAMPM, formatDayOfWeek, tempt, toK, toMiles,
+    formatDayOfWeek, tempt, toK, toMiles,
 } from 'shared/libs/convertData/convertData';
 import { isMobile } from 'react-device-detect';
 import cls from './CurrentDayCard.module.scss';
@@ -13,7 +13,7 @@ interface CurrentDayProps {
     className?: string;
 }
 
-export const CurrentDayCard = observer(({ className }: CurrentDayProps) => {
+export const CurrentDay = observer(({ className }: CurrentDayProps) => {
     const { valueStore, dataStore } = useStore();
     const { degree } = valueStore;
     const { city } = dataStore;
@@ -23,12 +23,12 @@ export const CurrentDayCard = observer(({ className }: CurrentDayProps) => {
         <div className={classNames(isMobile ? cls.CurrentDay_m : cls.CurrentDay, {}, [className])}>
             <Card padding={Padding.NONE}>
                 <div className={cls.top}>
-                    <div className={cls.day}>{ formatDayOfWeek(new Date(today?.dt_txt)) }</div>
+                    <div className={cls.day}>{ formatDayOfWeek(today?.dt_txt) }</div>
                     <div className={cls.time}>{ today?.weather?.[0]?.main }</div>
                 </div>
                 <div className={cls.middle}>
                     <span className={cls.degree}>
-                        { Math.floor(tempt(today?.main?.temp, degree)) }
+                        { tempt(today?.main?.temp, degree) }
                         °
                         { degree }
                     </span>
@@ -36,48 +36,37 @@ export const CurrentDayCard = observer(({ className }: CurrentDayProps) => {
                 </div>
                 <div className={cls.bottom}>
                     <div className={cls.info}>
-                        <span>Real Feel:</span>
-                        { ' ' }
-                        { Math.floor(tempt(today?.main?.feels_like, degree)) }
+                        <span>Real Feel: </span>
+                        { tempt(today?.main?.feels_like, degree) }
                         °
                         { degree }
                     </div>
                     <div className={cls.info}>
-                        <span>Wind:</span>
-                        { ' ' }
+                        <span>Wind: </span>
                         { today?.wind?.speed }
-                        { ' ' }
                         m/s
                     </div>
                     <div className={cls.info_double_container}>
                         <div>
-                            <span>Pressure:</span>
-                            { ' ' }
+                            <span>Pressure: </span>
                             { today?.main?.pressure }
-                            { ' ' }
                             hPa
                         </div>
                         <div>
-                            <span>Visibility:</span>
-                            { ' ' }
+                            <span>Visibility: </span>
                             { toMiles(today?.visibility) }
-                            { ' ' }
                             m
                         </div>
                     </div>
                     <div className={cls.info_double_container}>
                         <div>
-                            <span>Humidity:</span>
-                            { ' ' }
+                            <span>Humidity: </span>
                             { today?.main?.humidity }
-                            { ' ' }
                             %
                         </div>
                         <div>
-                            <span>Population:</span>
-                            { ' ' }
+                            <span>Population: </span>
                             { toK(city?.population) }
-                            { ' ' }
                             k
                         </div>
                     </div>

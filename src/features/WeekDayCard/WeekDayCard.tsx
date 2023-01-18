@@ -31,7 +31,7 @@ export const WeekDayCard = observer((props: WeekDayCardProps) => {
     } return (
         <div className={classNames(isMobile ? cls.WeekDayCard_m : cls.WeekDayCard, {}, [className])}>
             <div className={cls.top}>
-                { date && <div className={cls.date}>{ formatDay(new Date(date)) }</div> }
+                { date && <div className={cls.date}>{ formatDay(date) }</div> }
                 { time && <div className={cls.time}>{ formatAMPM(time) }</div> }
             </div>
             <div className={cls.middle}>
@@ -39,7 +39,7 @@ export const WeekDayCard = observer((props: WeekDayCardProps) => {
             </div>
             <div className={isMobile ? cls.bottom_m : cls.bottom}>
                 <span>
-                    { Math.floor(tempt(degree, degreeValue)) }
+                    { tempt(degree, degreeValue) }
                     °
                 </span>
             </div>

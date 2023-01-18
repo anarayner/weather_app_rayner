@@ -22,7 +22,7 @@ export const TopRight = observer(({ className }: TopRightProps) => {
                 <p className={cls.title}>Cloud, %</p>
                 <div className={cls.data}>
                     { hourly.map((day) => <Progress key={day.dt} value={day.clouds.all} day={formatAMPM(day.dt_txt)} />) }
-                    { week.map((day) => <Progress key={day.dt} value={day.clouds.all} day={formatDay(new Date(day.dt_txt))} />) }
+                    { week.map((day) => <Progress key={day.dt} value={day.clouds.all} day={formatDay(day.dt_txt)} />) }
                 </div>
             </div>
         </div>

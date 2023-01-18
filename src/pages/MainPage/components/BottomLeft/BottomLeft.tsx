@@ -1,5 +1,5 @@
 import { classNames } from 'shared/libs/classNames/classNames';
-import { WeatherDescCard } from 'features/WeatherDescCard/WeatherDescCard';
+import { TodayInfoCard } from 'features/TodayInfoCard/TodayInfoCard';
 import { observer } from 'mobx-react-lite';
 import FeelLike from 'shared/assets/icons/temperature.svg';
 import WindSpeed from 'shared/assets/icons/wind.svg';
@@ -33,63 +33,63 @@ export const BottomLeft = observer(({ className }: BottomLeftProps) => {
         <div className={classNames(cls.BottomLeft, {}, [className])}>
             <div className={cls.card_grid}>
                 <div className={cls.div1}>
-                    <WeatherDescCard
+                    <TodayInfoCard
                         title={Title.FEELS_LIKE}
                         icon={<FeelLike />}
-                        value={`${Math.floor(tempt(today?.main?.temp, degree))}°${degree}`}
+                        value={`${tempt(today?.main?.temp, degree)}°${degree}`}
                     />
                 </div>
                 <div className={cls.div2}>
-                    <WeatherDescCard
+                    <TodayInfoCard
                         title={Title.WIND_SPEED}
                         icon={<WindSpeed />}
                         value={`${today?.wind?.speed} m/s`}
                     />
                 </div>
                 <div className={cls.div3}>
-                    <WeatherDescCard
+                    <TodayInfoCard
                         title={Title.WIND_DIR}
                         icon={<WindDir />}
                         value={`${today?.wind?.deg}°`}
                     />
                 </div>
                 <div className={cls.div4}>
-                    <WeatherDescCard
+                    <TodayInfoCard
                         title={Title.WEATHER}
                         icon={<Rain />}
                         value={today?.weather?.[0]?.main}
                     />
                 </div>
                 <div className={cls.div5}>
-                    <WeatherDescCard
+                    <TodayInfoCard
                         title={Title.CLOUD}
                         icon={<Cloud />}
                         value={`${today?.clouds?.all} %`}
                     />
                 </div>
                 <div className={cls.div6}>
-                    <WeatherDescCard
+                    <TodayInfoCard
                         title={Title.PRESSURE}
                         icon={<Pressure />}
                         value={`${today?.main?.pressure} hPa`}
                     />
                 </div>
                 <div className={cls.div7}>
-                    <WeatherDescCard
+                    <TodayInfoCard
                         title={Title.HUMIDITY}
                         icon={<Humidity />}
                         value={`${today?.main?.humidity} %`}
                     />
                 </div>
                 <div className={cls.div8}>
-                    <WeatherDescCard
+                    <TodayInfoCard
                         title={Title.GRND_LEVER}
                         icon={<Level />}
                         value={`${today?.main?.grnd_level} hPa`}
                     />
                 </div>
                 <div className={cls.div9}>
-                    <WeatherDescCard
+                    <TodayInfoCard
                         title={Title.WIND_GUST}
                         icon={<Sunrise />}
                         value={`${today?.wind?.gust} m/s`}

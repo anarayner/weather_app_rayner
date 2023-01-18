@@ -1,5 +1,5 @@
 import { classNames } from 'shared/libs/classNames/classNames';
-import { OtherCitiesCard } from 'features/OtherCitiesCard/OtherCitiesCard';
+import { HistoryCard } from 'features/HistoryCard/HistoryCard';
 import { getSearchCity } from 'shared/libs/helpers/getData';
 import { localStorageSave } from 'shared/libs/helpers/localStorage';
 import { useStore } from 'store/store';
@@ -23,7 +23,7 @@ export const SearchHistory = observer(({ className }: SearchHistoryProps) => {
     return (
         <div className={classNames(isMobile ? cls.SearchHistory_m : cls.SearchHistory, {}, [className])}>
             { searchHistory.map((city: any) => (
-                <OtherCitiesCard
+                <HistoryCard
                     key={city?.city}
                     name={city?.city}
                     temp={city?.temp}

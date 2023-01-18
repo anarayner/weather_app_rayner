@@ -25,7 +25,7 @@ export const Clock = observer(({ className, size }: ClockProps) => {
     const time = formatAMPM(currentTime);
 
     useEffect(() => {
-        const interval = setInterval(() => setCurrentTime(new Date()), 1000);
+        const interval = setInterval(() => setCurrentTime(new Date()), 60000);
         return () => clearInterval(interval);
     }, []);
 

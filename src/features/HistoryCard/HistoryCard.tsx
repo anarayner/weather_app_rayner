@@ -5,7 +5,7 @@ import { observer } from 'mobx-react-lite';
 import { tempt } from 'shared/libs/convertData/convertData';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { useStore } from 'store/store';
-import cls from './OtherCitiesCard.module.scss';
+import cls from './HistoryCard.module.scss';
 
 interface OtherCitiesCardProps {
     className?: string;
@@ -14,7 +14,7 @@ interface OtherCitiesCardProps {
     weather?: string;
 }
 
-export const OtherCitiesCard = observer((props: OtherCitiesCardProps) => {
+export const HistoryCard = observer((props: OtherCitiesCardProps) => {
     const {
         className,
         name,
@@ -38,7 +38,7 @@ export const OtherCitiesCard = observer((props: OtherCitiesCardProps) => {
                     <div className={cls.bottom}>
                         <p>{ weather }</p>
                         <span>
-                            { Math.floor(tempt(temp, 'F')) }
+                            { tempt(temp, 'F') }
                             °F
                         </span>
                     </div>
